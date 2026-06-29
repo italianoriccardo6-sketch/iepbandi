@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Diagnostico Incentivi · Italiano &amp; Partners</title>
+<meta name="description" content="Scopri quali incentivi alle imprese può intercettare la tua azienda, oggi. Strumento gratuito di Italiano & Partners." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<style>
+  :root{--navy:#0E1E3A;--navy-2:#16284a;--ink:#1c2433;--paper:#FBFAF6;--line:#E6E1D5;
+    --gold:#C2912E;--gold-2:#E0B450;--muted:#6B7280;}
+  *{box-sizing:border-box;}
+  html,body{margin:0;background:var(--paper);}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .display{font-family:'Fraunces','Georgia',serif;}
+  .wrap{max-width:1140px;margin:0 auto;padding:26px 28px 64px;}
+  .panel{max-width:660px;margin:0 auto;}
+  @media(max-width:560px){.wrap{padding:22px 18px 56px;}}
+  .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+  .top{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:14px;}
+  .brandlink{display:flex;align-items:center;gap:12px;cursor:pointer;text-decoration:none;}
+  .mark{width:34px;height:34px;border-radius:50%;background:var(--navy);position:relative;flex:0 0 auto;}
+  .mark::after{content:"";position:absolute;inset:9px;border-radius:50%;border:1.5px solid var(--gold-2);}
+  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
+  .brand small{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
+  .topnav{margin-left:auto;display:flex;align-items:center;gap:18px;}
+  .topnav .lnk{font-size:13px;color:var(--muted);cursor:pointer;font-weight:500;}
+  .topnav .lnk:hover{color:var(--navy);}
+  .topcta{font-size:13px;font-weight:600;padding:9px 18px;border-radius:9px;background:var(--navy);color:#fff;cursor:pointer;border:none;}
+  .topcta:hover{background:var(--navy-2);}
+  /* HERO 2-col */
+  .herogrid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;margin-top:30px;}
+  @media(max-width:880px){.herogrid{grid-template-columns:1fr;gap:30px;}}
+  .hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:46px;line-height:1.04;color:var(--navy);margin:10px 0 16px;letter-spacing:-.02em;}
+  @media(max-width:880px){.hero h1{font-size:34px;}}
+  .hero .sub{font-size:16.5px;color:#41506a;margin:0 0 14px;}
+  .hero .welcome{font-size:13.5px;color:#41506a;background:#F1ECDD;border:1px solid var(--line);border-radius:9px;padding:10px 14px;margin:0 0 16px;}
+  .hero .welcome b{color:var(--navy);}
+  .hero .stat{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin:22px 0 0;}
+  .hero .stat b{color:var(--navy);}
+  .hero .cta{margin:22px 0 0;display:flex;gap:12px;flex-wrap:wrap;}
+  /* hero visual */
+  .heroviz{position:relative;min-height:330px;}
+  .vizcard{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 50px -28px rgba(14,30,58,.4);padding:22px;position:relative;z-index:3;}
+  .vizcard.behind1{position:absolute;inset:26px -14px auto 28px;height:120px;z-index:1;opacity:.55;transform:rotate(2.5deg);}
+  .vizcard.behind2{position:absolute;inset:14px 8px auto 14px;height:140px;z-index:2;opacity:.8;}
+  .vizhead{display:flex;align-items:center;gap:14px;}
+  .vizscore{flex:0 0 auto;}
+  .vizt{font-family:'Fraunces',serif;font-size:16px;color:var(--navy);font-weight:600;line-height:1.2;}
+  .vizmeta{font-size:11.5px;color:var(--muted);margin-top:2px;}
+  .viztags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;}
+  .viztag{font-size:10.5px;padding:3px 8px;border-radius:5px;background:#F3EFE3;color:#6b5a32;}
+  .viztag.nat{background:#F4E9C6;color:#8a6d1d;font-weight:600;}
+  .vizrow{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#41506a;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);}
+  .vizrow b{color:var(--navy);}
+  .how{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:54px 0 8px;}
+  @media(max-width:680px){.how{grid-template-columns:1fr;}}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#3a9b6e;flex:0 0 auto;}
+  .howitem{background:#fff;border:1px solid var(--line);border-radius:13px;padding:20px;}
+  .howitem .n{font-family:'Fraunces',serif;font-size:13px;color:var(--gold);font-weight:600;letter-spacing:.04em;}
+  .howitem h4{font-family:'Fraunces',serif;font-size:17px;color:var(--navy);margin:8px 0 6px;font-weight:600;}
+  .howitem p{font-size:13.5px;color:#41506a;margin:0;}
+  .chisiamo{background:var(--navy);color:#fff;border-radius:14px;padding:30px;margin-top:36px;}
+  .chisiamo .eyebrow{color:var(--gold-2);}
+  .chisiamo h3{font-family:'Fraunces',serif;font-size:23px;font-weight:600;margin:8px 0 12px;}
+  .chisiamo p{color:#c8d2e4;font-size:14.5px;margin:0 0 10px;max-width:70ch;}
+  .chisiamo .firm{font-weight:600;color:#fff;}
+  /* generic */
+  .progress{display:flex;gap:6px;margin:30px 0 24px;}
+  .pstep{flex:1;height:3px;border-radius:2px;background:var(--line);transition:background .3s;}
+  .pstep.on{background:var(--gold);}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;}
+  .steplabel{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;}
+  .steplabel b{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);font-weight:600;}
+  .num{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:.12em;}
+  .substep{font-size:13.5px;color:var(--muted);margin:0 0 22px;}
+  .field{margin-bottom:20px;}
+  .field>label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:9px;}
+  .hint{font-size:12px;color:var(--muted);font-weight:400;margin-left:6px;}
+  select.in,input.in{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:9px;font:inherit;font-size:14px;background:#fff;color:var(--ink);outline:none;}
+  select.in:focus,input.in:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(194,145,46,.15);}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{padding:9px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;cursor:pointer;background:#fff;color:#41506a;transition:all .15s;user-select:none;}
+  .chip:hover{border-color:var(--gold-2);}
+  .chip.sel{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media(max-width:560px){.row{grid-template-columns:1fr;}}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:#41506a;margin:4px 0 0;}
+  .consent input{margin-top:3px;flex:0 0 auto;}
+  .actions{display:flex;justify-content:space-between;align-items:center;margin-top:28px;gap:12px;}
+  .btn{font:inherit;font-size:14px;font-weight:600;padding:12px 22px;border-radius:10px;cursor:pointer;border:1px solid transparent;transition:all .15s;}
+  .btn-primary{background:var(--navy);color:#fff;}
+  .btn-primary:hover{background:var(--navy-2);}
+  .btn-primary:disabled{opacity:.4;cursor:not-allowed;}
+  .btn-ghost{background:transparent;color:var(--muted);}
+  .btn-ghost:hover{color:var(--ink);}
+  .btn-gold{background:linear-gradient(180deg,var(--gold-2),var(--gold));color:#2a1f06;}
+  .disc{font-size:12px;color:var(--muted);margin-top:22px;padding-top:16px;border-top:1px solid var(--line);}
+  .rhead{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px;margin-bottom:6px;}
+  .rhead h2{font-family:'Fraunces',serif;font-size:28px;color:var(--navy);font-weight:600;margin:6px 0 0;}
+  .subprofile{font-size:13px;color:var(--muted);margin:4px 0 4px;}
+  .result{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:13px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;}
+  .result.nat{border-color:#D8C58A;box-shadow:0 0 0 1px #EBDDAE inset;}
+  .score{width:60px;flex:0 0 auto;text-align:center;}
+  .score .lbl{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:2px;}
+  .mname{font-family:'Fraunces',serif;font-size:17px;color:var(--navy);font-weight:600;margin:0;line-height:1.25;}
+  .natbadge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8a6d1d;background:#F4E9C6;border-radius:5px;padding:2px 7px;margin-left:8px;vertical-align:middle;}
+  .meta{font-size:12px;color:var(--muted);margin-top:3px;}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin:11px 0;}
+  .tag{font-size:11px;padding:4px 9px;border-radius:6px;background:#F3EFE3;color:#6b5a32;}
+  .tag.sport{background:#E9F2EC;color:#2f6b4f;}
+  .facts{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:#41506a;margin:4px 0 10px;}
+  .facts b{color:var(--navy);font-weight:600;}
+  .why{font-size:12.5px;color:#41506a;}
+  .why ul{margin:0 0 0 16px;padding:0;}
+  .why li{margin:2px 0;}
+  .mcta{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap;}
+  .link{font-size:12.5px;color:var(--gold);text-decoration:none;font-weight:600;}
+  .link:hover{text-decoration:underline;}
+  .more{display:block;margin:20px auto 0;}
+  .lead{background:var(--navy);color:#fff;border-radius:14px;padding:30px;margin-top:34px;}
+  .lead h3{font-family:'Fraunces',serif;font-size:24px;font-weight:600;margin:0 0 8px;}
+  .lead p{color:#c5cfe0;font-size:14px;margin:0 0 18px;max-width:60ch;}
+  .callbox{background:rgba(255,255,255,.05);border:1px solid rgba(224,180,80,.35);border-radius:12px;padding:18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;}
+  .callbox .t{font-family:'Fraunces',serif;font-size:17px;font-weight:600;}
+  .callbox .s{color:#c5cfe0;font-size:13px;margin-top:3px;}
+  .empty{text-align:center;color:var(--muted);padding:40px 20px;}
+  .thanks{text-align:center;padding:18px 0 4px;}
+  .thanks .ck{font-size:34px;}
+  .footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);}
+  .footer b{color:var(--navy);}
+  .footer details{margin-top:10px;}
+  .footer summary{cursor:pointer;color:var(--navy);font-weight:600;}
+  .footer .info{margin-top:10px;font-size:12px;line-height:1.6;max-width:80ch;}
+
+  .tabs{display:flex;gap:6px;background:#F1ECDD;border:1px solid var(--line);border-radius:11px;padding:5px;margin-bottom:22px;}
+  .tab{flex:1;text-align:center;padding:10px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--muted);cursor:pointer;}
+  .tab.on{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(11,27,51,.08);}
+  .dashhead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:6px 0 22px;}
+  .dashhead h2{margin:4px 0 0;}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px;}
+  .kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;}
+  .kpi.warn{border-color:rgba(194,145,46,.55);background:#FBF6EA;}
+  .kpi .kv{font-family:'Fraunces',serif;font-size:29px;font-weight:600;color:var(--navy);line-height:1;}
+  .kpi.warn .kv{color:#9a6b12;}
+  .kpi .kl{font-size:13px;font-weight:600;color:#41506a;margin-top:9px;}
+  .kpi .ks{font-size:12px;color:var(--muted);margin-top:2px;}
+  .kpi.clickable{cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .05s;}
+  .kpi.clickable:hover{border-color:var(--gold-2);box-shadow:0 10px 26px -16px rgba(14,30,58,.4);}
+  .kpi.clickable:active{transform:translateY(1px);}
+  .kpi .kgo{font-size:12px;font-weight:600;color:var(--gold);margin-top:11px;}
+  .vfilter{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0 2px;}
+  .vpill{font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:#41506a;cursor:pointer;user-select:none;}
+  .vpill:hover{border-color:var(--gold-2);}
+  .vpill.on{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .dashsec{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-top:16px;}
+  .dstitle{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:4px;}
+  .dstitle h3{font-size:18px;color:var(--navy);margin:0;}
+  .scadrow,.reqrow{display:flex;align-items:center;gap:14px;padding:13px 0;border-top:1px solid var(--line);}
+  .scadrow:first-of-type,.reqrow:first-of-type{border-top:none;}
+  .scadd{min-width:104px;}
+  .scadd b{display:block;color:var(--navy);font-size:14px;}
+  .scadd span{font-size:11.5px;color:var(--muted);}
+  .scadm{flex:1;min-width:0;}
+  .sname{font-weight:600;color:var(--navy);font-size:14px;}
+  .stato{font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:20px;white-space:nowrap;}
+  .stato.new{background:#EAF2EC;color:#2F6B4F;}
+  .stato.work{background:#FBF1DA;color:#9a6b12;}
+  .stato.done{background:#E9ECF2;color:#41506a;}
+  .profilo{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px;}
+  .pcell{background:#FAF7EF;border:1px solid var(--line);border-radius:10px;padding:11px 13px;}
+  .pl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;}
+  .pv{font-size:14px;color:var(--navy);font-weight:600;margin-top:3px;word-break:break-word;}
+  .dashprompt{display:flex;gap:18px;align-items:center;background:var(--navy);color:#fff;border-radius:14px;padding:26px;}
+  .dashprompt .dpi{font-size:34px;color:var(--gold-2);line-height:1;}
+  .dashprompt b{font-family:'Fraunces',serif;font-size:19px;}
+  .dashprompt p{color:#c5cfe0;font-size:13.5px;margin:6px 0 14px;}
+  @media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr);}.profilo{grid-template-columns:repeat(2,1fr);}}
+  body{overflow-x:hidden;}
+  .hamb{display:none;margin-left:auto;width:42px;height:38px;border:1px solid var(--line);border-radius:9px;background:#fff;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:0;}
+  .hamb span{display:block;width:18px;height:2px;background:var(--navy);border-radius:2px;}
+  @media(max-width:720px){
+    .top{position:relative;}
+    .hamb{display:flex;}
+    .topnav{display:none;}
+    .topnav.open{display:flex;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:calc(100% + 10px);right:0;left:0;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 40px -20px rgba(14,30,58,.45);padding:8px;z-index:60;margin-left:0;}
+    .topnav.open .lnk{padding:12px;font-size:15px;border-radius:8px;}
+    .topnav.open .lnk:hover{background:#FAF7EF;}
+    .topnav.open .topcta{width:100%;margin-top:6px;text-align:center;padding:12px;font-size:15px;}
+  }
+  @media(max-width:600px){
+    .wrap{padding:20px 16px 52px;}
+    .brand{font-size:15px;}
+    .brand small{font-size:9.5px;letter-spacing:.12em;}
+    .mark{width:30px;height:30px;}
+    .herogrid{gap:24px;margin-top:20px;}
+    .hero h1{font-size:27px;}
+    .hero .sub{font-size:15px;}
+    .heroviz{min-height:auto;margin-top:4px;}
+    .vizcard.behind1,.vizcard.behind2{display:none;}
+    .how{margin-top:36px;}
+    .card{padding:20px 17px;}
+    .chisiamo,.lead{padding:22px 19px;}
+    .chisiamo h3,.lead h3{font-size:20px;}
+    .rhead h2{font-size:22px;}
+    .steplabel b{font-size:19px;}
+    .dashhead{align-items:flex-start;gap:10px;}
+    .dashhead h2{font-size:23px;}
+    .kpi{padding:15px;}
+    .kpi .kv{font-size:24px;}
+    .kpi .kl{font-size:12.5px;}
+    .actions{flex-wrap:wrap;gap:10px;}
+    .btn{padding:11px 16px;font-size:13.5px;}
+    .callbox{flex-direction:column;align-items:stretch;}
+    .scadrow,.reqrow{flex-wrap:wrap;}
+    .scadd{min-width:0;width:100%;display:flex;gap:8px;align-items:baseline;}
+    .result{padding:16px 15px;gap:13px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Form Netlify per le richieste di valutazione (gli account utenti sono su Supabase) -->
+<form name="contatto-incentivi" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="bot-field" /><input type="text" name="impresa" /><input type="email" name="email" /><input type="text" name="profilo" />
+</form>
+
+<div class="wrap" id="app"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* === CONFIGURAZIONE — da personalizzare ================================== */
+var BOOKING_URL = "https://calendly.com/italianoepartners-info/30min"; // <-- link reale (Cal.com / Calendly / Google)
+var PRIVACY_EMAIL = "privacy@italianoepartners.com";                          // <-- email reale per i diritti GDPR
+var SUPABASE_URL = "https://dhdtekjtrfenculecrsu.supabase.co";                        // <-- Project URL (Supabase > Project Settings > API)
+var SUPABASE_ANON_KEY = "sb_publishable_fk16_jklRkGKZt6eirmFIA_EpkPgMvl";                                       // <-- anon public key (sicura lato client con RLS attiva)
+/* ======================================================================== */
+
+var MISURE = [];
+
+var REGIONI = ["Abruzzo","Basilicata","Calabria","Campania","Emilia-Romagna","Friuli-Venezia Giulia","Lazio","Liguria","Lombardia","Marche","Molise","Piemonte","Puglia","Sardegna","Sicilia","Toscana","Trentino-Alto Adige/Südtirol","Umbria","Valle d'Aosta/Vallée d'Aoste","Veneto"];
+var MEZZOGIORNO = {"Abruzzo":1,"Molise":1,"Campania":1,"Puglia":1,"Basilicata":1,"Calabria":1,"Sicilia":1,"Sardegna":1};
+var SETTORI = ["Agricoltura, silvicoltura e pesca","Agroalimentare","Alberghiero","Altri servizi","Artigianato","Autoveicoli e altri mezzi di trasporto","Chimica e Farmaceutica","Commercio","Cultura","Edilizia","Elettronica","Fornitura Energia, Acqua e gestione Rifiuti","ICT","Meccanica","Metallurgia","Mobili, Legno e Carta","Moda e Tessile","Ristorazione","Salute","Servizi di trasporto","Turismo"];
+var DIM = {micro:"Micro impresa",piccola:"Piccola impresa",media:"Media impresa",grande:"Grande impresa"};
+var FORME = {"fondo-perduto":"Fondo perduto","credito-imposta":"Credito d'imposta / fiscale","finanziamento":"Finanziamento agevolato","garanzia":"Garanzia","capitale-rischio":"Capitale di rischio","decontribuzione":"Decontribuzione"};
+
+function euro(n){ return n==null ? null : "€ " + Number(n).toLocaleString("it-IT"); }
+function dataIt(iso){ if(!iso) return null; var a=iso.split("-"); return a[2]+"/"+a[1]+"/"+a[0]; }
+function esc(s){ return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+var S = { step:"home", registered:false, user:null, reg:{}, settore:"", dimensione:"", regione:"", forme:[], importo:150000, kw:"", limite:20, consenso:false, authMode:"registrati", profilo:null, richieste:[], menuOpen:false, vista:"tutti" };
+
+/* --- motore di match --- */
+function valuta(m,P){
+  var dimOk = !m.d || m.d.length===0 || m.d.indexOf(P.dimensione)>=0;
+  var regOk = m.naz===1 || (m.r && m.r.indexOf(P.regione)>=0);
+  if(!dimOk || !regOk) return null;
+  var pt=38, motivi=[];
+  if(m.cur){ pt+=8; }
+  var aperto = m.at===1 || m.sAll===1;
+  if(P.settore){
+    if(aperto){ pt+=12; motivi.push("Aperta a tutti i settori"); }
+    else if(m.s && m.s.indexOf(P.settore)>=0){ pt+=22; motivi.push("Settore ammesso: "+P.settore); }
+    else { pt-=8; motivi.push("Settore da verificare"); }
+  } else if(aperto){ pt+=6; }
+  if(P.forme && P.forme.length){
+    var ov = m.f.filter(function(f){ return P.forme.indexOf(f)>=0; });
+    if(ov.length){ pt+=16; motivi.push("Forma in linea: "+ov.map(function(f){return FORME[f];}).join(", ")); }
+    else { pt-=6; }
+  }
+  if(m.smax){
+    if(P.importo<=m.smax){ pt+=12; motivi.push("Compatibile con spesa fino a "+euro(m.smax)); }
+    else { pt-=6; motivi.push("Investimento oltre il massimale tipico"); }
+  }
+  if(P.kw){
+    var hay = (m.t+" "+(m.ob||"")).toLowerCase();
+    if(hay.indexOf(P.kw.toLowerCase())>=0){ pt+=18; motivi.push("Corrisponde a \u201c"+P.kw+"\u201d"); }
+  }
+  if(MEZZOGIORNO[P.regione] && m.mez===1) pt+=6;
+  if(!m.ch){ pt+=5; motivi.push("Sempre aperta (a sportello)"); }
+  if(m.amb && m.amb.indexOf("ZES")>=0 && MEZZOGIORNO[P.regione]){ pt+=5; motivi.push("Ambito ZES"); }
+  return { m:m, punteggio:Math.max(10,Math.min(Math.round(pt),100)), motivi:motivi };
+}
+function risultati(P){
+  var out=[]; for(var i=0;i<MISURE.length;i++){ var r=valuta(MISURE[i],P); if(r) out.push(r); }
+  out.sort(function(a,b){ return b.punteggio-a.punteggio; }); return out;
+}
+
+/* --- UI helpers --- */
+function ring(v){
+  var r=26,c=2*Math.PI*r,off=c-(v/100)*c,col=v>=70?"#2F6B4F":(v>=50?"#C2912E":"#9aa2af");
+  return '<svg width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="'+r+'" fill="none" stroke="#EDE8DB" stroke-width="5"/><circle cx="30" cy="30" r="'+r+'" fill="none" stroke="'+col+'" stroke-width="5" stroke-linecap="round" stroke-dasharray="'+c+'" stroke-dashoffset="'+off+'" transform="rotate(-90 30 30)"/><text x="30" y="35" text-anchor="middle" font-size="16" font-weight="700" fill="'+col+'" font-family="Inter,sans-serif">'+v+'</text></svg>';
+}
+function header(){
+  var esci='\u003cspan class="lnk" data-logout="1"\u003eEsci\u003c/span\u003e';
+  var items;
+  if(S.step!=="home"){
+    items='\u003cspan class="lnk" data-go="home"\u003e\u2190 Home\u003c/span\u003e';
+    if(S.registered){ items+='\u003cspan class="lnk" data-go="dashboard"\u003eDashboard\u003c/span\u003e\u003cspan class="lnk" data-go="s1"\u003eDiagnostico\u003c/span\u003e'+esci; }
+  } else if(S.registered){
+    items='\u003cspan class="lnk" data-go="s1"\u003eDiagnostico\u003c/span\u003e'+esci+'\u003cbutton class="topcta" data-go="dashboard"\u003eLa mia dashboard\u003c/button\u003e';
+  } else {
+    items='\u003cspan class="lnk" data-login="accedi"\u003eAccedi\u003c/span\u003e\u003cbutton class="topcta" data-login="registrati"\u003eRegistrati\u003c/button\u003e';
+  }
+  var burger='\u003cbutton class="hamb" data-menu="1" aria-label="Menu"\u003e\u003cspan\u003e\u003c/span\u003e\u003cspan\u003e\u003c/span\u003e\u003cspan\u003e\u003c/span\u003e\u003c/button\u003e';
+  var nav='\u003cdiv class="topnav'+(S.menuOpen?' open':'')+'"\u003e'+items+'\u003c/div\u003e';
+  return '\u003cdiv class="top"\u003e\u003ca class="brandlink" data-go="home"\u003e\u003cspan class="mark"\u003e\u003c/span\u003e\u003cspan class="brand"\u003eItaliano&nbsp;&amp;&nbsp;Partners\u003csmall\u003eDiagnostico Incentivi\u003c/small\u003e\u003c/span\u003e\u003c/a\u003e'+burger+nav+'\u003c/div\u003e';
+}
+function footer(){
+  return '<div class="footer"><b>Italiano &amp; Partners</b>, studio integrato di assistenza legale e consulenza d\'impresa. '+
+    'Strumento gratuito di orientamento sugli incentivi alle imprese.'+
+    '<details><summary>Informativa privacy</summary><div class="info"><b>Titolare del trattamento:</b> Italiano &amp; Partners. '+
+    '<b>Dati trattati:</b> impresa, referente, email, telefono e profilo aziendale conferiti in fase di registrazione. '+
+    '<b>Finalità:</b> consentire l\'accesso al diagnostico e ricontattare l\'interessato in merito alle agevolazioni di interesse. '+
+    '<b>Base giuridica:</b> consenso dell\'interessato (art. 6.1.a GDPR). <b>Conservazione:</b> per il tempo necessario alle finalità indicate. '+
+    'I dati non sono diffusi a terzi. <b>Diritti:</b> accesso, rettifica, cancellazione, limitazione e opposizione (artt. 15–22 GDPR), '+
+    'esercitabili scrivendo a '+esc(PRIVACY_EMAIL)+'.</div></details>'+
+    '<div style="margin-top:10px;font-size:11.5px">Risultati orientativi: fanno fede esclusivamente i bandi e i provvedimenti ufficiali degli enti competenti.</div></div>';
+}
+
+function render(){
+  var app=document.getElementById("app"); var h=header();
+
+  if(S.step==="home"){
+    h+='<div class="herogrid"><div class="hero">'+
+       '<span class="eyebrow">Orientamento agli incentivi alle imprese</span>'+
+       '<h1 class="display">Gli incentivi giusti per la tua impresa, in un solo posto.</h1>'+
+       '<p class="sub">Ogni anno centinaia di bandi nazionali, regionali ed europei restano inutilizzati perché le imprese non sanno che esistono. Questo strumento incrocia il profilo della tua azienda con i bandi <b>attualmente aperti</b> e ti mostra quelli pertinenti, ordinati per coerenza.</p>'+
+       '<p class="sub">È gratuito e richiede pochi minuti. Per accedere è sufficiente registrarsi.</p>'+
+       (S.registered ? '<div class="welcome">Bentornato'+(S.reg.impresa?', <b>'+esc(S.reg.impresa)+'</b>':'')+'. I tuoi dati sono salvati nel tuo account.</div>' : '')+
+       '<div class="cta">'+accessButtons()+'</div>'+
+       '<div class="stat"><span class="dot"></span><b>'+(MISURE.length||'…')+' bandi aperti</b>&nbsp;monitorati e aggiornati di continuo</div>'+
+       '</div>'+
+       '<div class="heroviz">'+
+         '<div class="vizcard behind1"></div><div class="vizcard behind2"></div>'+
+         '<div class="vizcard"><div class="vizhead"><div class="vizscore">'+ring(94)+'</div>'+
+           '<div><div class="vizt">SIMEST Internazionalizzazione</div><div class="vizmeta">SIMEST · Nazionale</div></div></div>'+
+           '<div class="viztags"><span class="viztag nat">Nazionale</span><span class="viztag">Finanziamento agevolato</span><span class="viztag">Fondo perduto</span></div>'+
+           '<div class="vizrow"><span>Agevolazione fino a <b>€ 4.000.000</b></span><span>A sportello</span></div>'+
+         '</div>'+
+       '</div></div>';
+    h+='<div class="how">'+
+       '<div class="howitem"><div class="n">01</div><h4>Ti registri</h4><p>Pochi dati della tua impresa per accedere allo strumento e ricevere il riepilogo.</p></div>'+
+       '<div class="howitem"><div class="n">02</div><h4>Descrivi impresa e progetto</h4><p>Settore, dimensione, regione e cosa vuoi finanziare: bastano due passaggi.</p></div>'+
+       '<div class="howitem"><div class="n">03</div><h4>Ricevi i bandi pertinenti</h4><p>La lista ordinata per coerenza, con scadenze e schede ufficiali. E lo studio ti affianca.</p></div>'+
+       '</div>';
+    h+='<div class="chisiamo"><span class="eyebrow">Chi ha creato questo strumento</span>'+
+       '<h3 class="display">Italiano &amp; Partners</h3>'+
+       '<p><span class="firm">Italiano &amp; Partners</span> è uno studio che integra assistenza legale e consulenza d\'impresa, con una specializzazione consolidata nella finanza agevolata e negli strumenti di incentivo pubblico, nazionali, regionali ed europei.</p>'+
+       '<p>Affianchiamo imprese e professionisti nell\'individuare, accedere e gestire le agevolazioni: dalla verifica di ammissibilità alla costruzione e presentazione della domanda. Questo diagnostico è uno strumento gratuito che mettiamo a disposizione per orientarti tra i bandi aperti, il primo passo e non il sostituto di una valutazione professionale.</p>'+
+       '<div style="margin-top:18px">'+accessCTA("btn btn-gold")+'</div></div>';
+    h+=footer();
+  }
+
+  else if(S.step==="login"){
+    var isReg = S.authMode!=="accedi";
+    h+='\u003cdiv class="panel"\u003e\u003cdiv class="card"\u003e'+
+       '\u003cdiv class="tabs"\u003e\u003cdiv class="tab'+(isReg?' on':'')+'" data-tab="registrati"\u003eRegistrati\u003c/div\u003e\u003cdiv class="tab'+(!isReg?' on':'')+'" data-tab="accedi"\u003eHo gi\u00e0 un account\u003c/div\u003e\u003c/div\u003e';
+    if(isReg){
+      h+='\u003cdiv class="steplabel"\u003e\u003cspan class="num"\u003eNUOVO ACCOUNT\u003c/span\u003e\u003cb class="display"\u003eRegistra la tua impresa\u003c/b\u003e\u003c/div\u003e'+
+         '\u003cp class="substep"\u003ePochi dati e ti inviamo un link di accesso via email: nessuna password. Le volte successive entri con la sola email, da qualsiasi dispositivo.\u003c/p\u003e'+
+         '\u003cdiv class="row"\u003e\u003cdiv class="field"\u003e\u003clabel\u003eImpresa *\u003c/label\u003e\u003cinput class="in" id="r-impresa" value="'+esc(S.reg.impresa||"")+'" placeholder="Ragione sociale"\u003e\u003c/div\u003e'+
+         '\u003cdiv class="field"\u003e\u003clabel\u003eReferente *\u003c/label\u003e\u003cinput class="in" id="r-ref" value="'+esc(S.reg.referente||"")+'" placeholder="Nome e cognome"\u003e\u003c/div\u003e\u003c/div\u003e'+
+         '\u003cdiv class="row"\u003e\u003cdiv class="field"\u003e\u003clabel\u003eEmail *\u003c/label\u003e\u003cinput class="in" id="r-email" value="'+esc(S.reg.email||"")+'" placeholder="nome@impresa.it"\u003e\u003c/div\u003e'+
+         '\u003cdiv class="field"\u003e\u003clabel\u003eTelefono\u003c/label\u003e\u003cinput class="in" id="r-tel" value="'+esc(S.reg.telefono||"")+'" placeholder="+39\u2026"\u003e\u003c/div\u003e\u003c/div\u003e'+
+         '\u003clabel class="consent"\u003e\u003cinput type="checkbox" id="r-consenso"'+(S.consenso?" checked":"")+'\u003e \u003cspan\u003eHo letto l\'\u003cb\u003einformativa privacy\u003c/b\u003e (in fondo alla pagina) e acconsento al trattamento dei dati da parte di Italiano &amp; Partners per le finalit\u00e0 indicate. *\u003c/span\u003e\u003c/label\u003e'+
+         '\u003cdiv class="actions"\u003e\u003cbutton class="btn btn-ghost" data-go="home"\u003e\u2190 Indietro\u003c/button\u003e\u003cbutton class="btn btn-primary" id="reg-go"\u003eInvia link di accesso \u2192\u003c/button\u003e\u003c/div\u003e';
+    } else {
+      h+='\u003cdiv class="steplabel"\u003e\u003cspan class="num"\u003eACCESSO\u003c/span\u003e\u003cb class="display"\u003eBentornato\u003c/b\u003e\u003c/div\u003e'+
+         '\u003cp class="substep"\u003eHai gi\u00e0 un account? Inserisci la tua email: ti inviamo il link di accesso, senza password.\u003c/p\u003e'+
+         '\u003cdiv class="field"\u003e\u003clabel\u003eEmail *\u003c/label\u003e\u003cinput class="in" id="r-email" value="'+esc(S.reg.email||"")+'" placeholder="nome@impresa.it"\u003e\u003c/div\u003e'+
+         '\u003cdiv class="actions"\u003e\u003cbutton class="btn btn-ghost" data-go="home"\u003e\u2190 Indietro\u003c/button\u003e\u003cbutton class="btn btn-primary" id="reg-go"\u003eInvia link di accesso \u2192\u003c/button\u003e\u003c/div\u003e';
+    }
+    h+='\u003c/div\u003e\u003c/div\u003e';
+    h+=footer();
+  }
+  else if(S.step==="checkmail"){
+    h+='<div class="panel"><div class="card" style="text-align:center"><div class="ck" style="font-size:34px">✉️</div>'+
+       '<h3 class="display" style="font-size:23px;color:var(--navy);margin:6px 0 8px">Controlla la tua email</h3>'+
+       '<p class="substep" style="margin:0 auto;max-width:46ch">Abbiamo inviato un link di accesso a <b>'+esc(S.reg.email||"")+'</b>. Aprilo da questo dispositivo per entrare nel diagnostico. Se non lo trovi, controlla nello spam.</p>'+
+       '<div style="margin-top:22px"><button class="btn btn-ghost" data-go="login">← Usa un\'altra email</button></div></div></div>';
+    h+=footer();
+  }
+
+  else if(S.step==="dashboard"){
+    var P=S.profilo;
+    h+='\u003cdiv class="dashhead"\u003e\u003cdiv\u003e\u003cspan class="eyebrow"\u003eLa tua impresa\u003c/span\u003e\u003ch2 class="display"\u003e'+(S.reg.impresa?esc(S.reg.impresa):"La mia dashboard")+'\u003c/h2\u003e\u003cp class="subprofile"\u003e'+esc(S.reg.referente||"")+(S.reg.email?' \u00b7 '+esc(S.reg.email):'')+'\u003c/p\u003e\u003c/div\u003e\u003cbutton class="topcta" data-go="s1"\u003e'+(P?"Aggiorna la diagnosi":"Avvia il diagnostico")+' \u2192\u003c/button\u003e\u003c/div\u003e';
+    if(!P){
+      h+='\u003cdiv class="dashprompt"\u003e\u003cdiv class="dpi"\u003e\u25ce\u003c/div\u003e\u003cdiv\u003e\u003cb\u003eCompleta il diagnostico per attivare la dashboard\u003c/b\u003e\u003cp\u003eBastano due passaggi: settore, dimensione e regione. Calcoliamo subito i bandi aperti su misura, con scadenze e valore potenziale.\u003c/p\u003e\u003cbutton class="btn btn-gold" data-go="s1"\u003eAvvia il diagnostico \u2192\u003c/button\u003e\u003c/div\u003e\u003c/div\u003e';
+    } else {
+      var K=computeKPIs(P);
+      h+='\u003cdiv class="kpis"\u003e'+
+         kpi(K.pertinenti,"Bandi pertinenti","aperti per il tuo profilo","","tutti")+
+         kpi(K.scad30,"Scadenze \u2264 30 giorni","da non perdere",K.scad30>0?"warn":"","scad30")+
+         kpi(K.sportello,"A sportello","sempre aperte","","sportello")+
+         '\u003c/div\u003e';
+      var scad=K.res.filter(function(r){return r.m.ch;}).sort(function(a,b){return new Date(a.m.ch)-new Date(b.m.ch);}).slice(0,5);
+      h+='\u003cdiv class="dashsec"\u003e\u003cdiv class="dstitle"\u003e\u003ch3 class="display"\u003eProssime scadenze\u003c/h3\u003e\u003cspan class="lnk" data-vista="tutti"\u003eVedi tutti i bandi \u2192\u003c/span\u003e\u003c/div\u003e';
+      if(scad.length===0){ h+='\u003cp class="subprofile"\u003eNessuna scadenza ravvicinata tra i bandi pertinenti: la maggior parte \u00e8 a sportello.\u003c/p\u003e'; }
+      else { for(var si=0;si<scad.length;si++){ var sr=scad[si], sm=sr.m;
+        h+='\u003cdiv class="scadrow"\u003e\u003cdiv class="scadd"\u003e\u003cb\u003e'+dataIt(sm.ch)+'\u003c/b\u003e\u003cspan\u003e'+giorni(sm.ch)+'\u003c/span\u003e\u003c/div\u003e'+
+           '\u003cdiv class="scadm"\u003e\u003cdiv class="sname"\u003e'+esc(sm.t)+'\u003c/div\u003e\u003cdiv class="meta"\u003e'+esc(sm.e)+(sm.amax?' \u00b7 fino a '+euro(sm.amax):'')+'\u003c/div\u003e\u003c/div\u003e'+
+           '\u003cbutton class="btn btn-gold" style="padding:7px 13px;font-size:12.5px" data-reqmis="'+esc(sm.id)+'"\u003eRichiedi \u2192\u003c/button\u003e\u003c/div\u003e';
+      } }
+      h+='\u003c/div\u003e';
+    }
+    h+='\u003cdiv class="dashsec"\u003e\u003cdiv class="dstitle"\u003e\u003ch3 class="display"\u003eIl mio profilo impresa\u003c/h3\u003e\u003cspan class="lnk" data-go="s1"\u003eModifica \u2192\u003c/span\u003e\u003c/div\u003e\u003cdiv class="profilo"\u003e'+
+       pcell("Impresa",S.reg.impresa)+pcell("Referente",S.reg.referente)+pcell("Email",S.reg.email)+pcell("Telefono",S.reg.telefono)+
+       (P?(pcell("Settore",P.settore||"Tutti")+pcell("Dimensione",P.dimensione?DIM[P.dimensione]:"\u2014")+pcell("Regione",P.regione)+pcell("Investimento",euro(P.importo))):'')+
+       '\u003c/div\u003e\u003c/div\u003e';
+    h+=footer();
+  }
+
+  else if(S.step==="s1"){
+    h+='<div class="panel"><div class="progress"><div class="pstep on"></div><div class="pstep"></div></div><div class="card">'+
+       '<div class="steplabel"><span class="num">PASSO 01</span><b class="display">La tua impresa</b></div><p class="substep">&nbsp;</p>'+
+       '<div class="field"><label>Settore di attività</label><select class="in" id="f-settore"><option value="">Tutti / non specificato</option>'+SETTORI.map(function(s){return '<option'+(S.settore===s?' selected':'')+'>'+s+'</option>';}).join("")+'</select></div>'+
+       '<div class="row"><div class="field"><label>Dimensione</label><select class="in" id="f-dim"><option value="">Seleziona…</option>'+Object.keys(DIM).map(function(k){return '<option value="'+k+'"'+(S.dimensione===k?' selected':'')+'>'+DIM[k]+'</option>';}).join("")+'</select></div>'+
+       '<div class="field"><label>Regione</label><select class="in" id="f-reg"><option value="">Seleziona…</option>'+REGIONI.map(function(r){return '<option'+(S.regione===r?' selected':'')+'>'+r+'</option>';}).join("")+'</select></div></div>'+
+       '<div class="actions"><button class="btn btn-ghost" data-go="home">← Home</button><button class="btn btn-primary" id="next1">Continua →</button></div></div></div>';
+  }
+
+  else if(S.step==="s2"){
+    h+='<div class="panel"><div class="progress"><div class="pstep on"></div><div class="pstep on"></div></div><div class="card">'+
+       '<div class="steplabel"><span class="num">PASSO 02</span><b class="display">Il progetto</b></div><p class="substep">&nbsp;</p>'+
+       '<div class="field"><label>Forma di agevolazione cercata <span class="hint">facoltativo</span></label><div class="chips" id="chips-forme">'+
+       Object.keys(FORME).map(function(k){return '<div class="chip'+(S.forme.indexOf(k)>=0?' sel':'')+'" data-forme="'+k+'">'+FORME[k]+'</div>';}).join("")+'</div></div>'+
+       '<div class="field"><label>Importo orientativo dell\'investimento</label><input class="in" type="range" min="10000" max="5000000" step="10000" id="f-imp" value="'+S.importo+'"><div class="display" id="imp-lbl" style="font-size:22px;color:var(--navy);margin-top:8px">'+euro(S.importo)+'</div></div>'+
+       '<div class="field" style="margin-bottom:0"><label>Parola chiave del progetto <span class="hint">facoltativo, es. “digitale”, “export”, “turismo”</span></label><input class="in" id="f-kw" value="'+esc(S.kw)+'" placeholder="Cosa vuoi finanziare?"></div>'+
+       '<div class="actions"><button class="btn btn-ghost" data-go="s1">← Indietro</button><button class="btn btn-primary" id="next2">Trova i bandi →</button></div></div></div>';
+  }
+
+  else if(S.step==="results"){
+    var res=risultati(S);
+    var _t=new Date();
+    function _pass(r){ var m=r.m;
+      if(S.vista==="scad30"){ if(!m.ch) return false; var d=(new Date(m.ch)-_t)/86400000; return d>=0&&d<=30; }
+      if(S.vista==="sportello"){ return !m.ch; }
+      return true;
+    }
+    var view=res.filter(_pass);
+    var titolo = S.vista==="scad30" ? (view.length+' in scadenza entro 30 giorni')
+               : S.vista==="sportello" ? (view.length+' opportunit\u00e0 a sportello')
+               : (view.length+' bandi pertinenti');
+    h+='\u003cdiv class="rhead"\u003e\u003cdiv\u003e\u003cspan class="eyebrow"\u003eSu '+res.length+' pertinenti al tuo profilo\u003c/span\u003e\u003ch2 class="display"\u003e'+titolo+'\u003c/h2\u003e\u003c/div\u003e\u003cbutton class="btn btn-ghost" data-go="dashboard"\u003e\u2190 Dashboard\u003c/button\u003e\u003c/div\u003e';
+    h+='\u003cp class="subprofile"\u003e'+(S.dimensione?DIM[S.dimensione]:"")+' \u00b7 '+esc(S.regione)+(S.settore?' \u00b7 '+esc(S.settore):'')+'\u003c/p\u003e';
+    h+='\u003cdiv class="vfilter"\u003e'+vpill("tutti","Tutti")+vpill("scad30","In scadenza \u2264 30gg")+vpill("sportello","A sportello")+'\u003cspan class="lnk" data-go="s1" style="margin-left:auto"\u003e\u21bb Modifica profilo\u003c/span\u003e\u003c/div\u003e';
+    if(view.length===0){ h+='\u003cdiv class="card empty"\u003e'+(S.vista==="scad30"?"Nessun bando pertinente in scadenza nei prossimi 30 giorni. La maggior parte \u00e8 a sportello.":(S.vista==="sportello"?"Nessun bando a sportello tra quelli pertinenti.":"Nessun bando aperto combacia con i criteri indicati. Prova a modificare il profilo."))+'\u003c/div\u003e'; }
+    else {
+      var shown=view.slice(0,S.limite);
+      for(var i=0;i<shown.length;i++){
+        var r=shown[i], m=r.m;
+        var formeT=m.f.map(function(f){return '\u003cspan class="tag"\u003e'+FORME[f]+'\u003c/span\u003e';}).join("");
+        if(!m.ch) formeT+='\u003cspan class="tag sport"\u003eA sportello\u003c/span\u003e';
+        var dove=m.naz?" \u00b7 Nazionale":(m.r?" \u00b7 "+m.r.slice(0,3).join(", ")+(m.r.length>3?"\u2026":""):"");
+        var facts=''; if(m.amax) facts+='\u003cspan\u003eAgevolazione fino a \u003cb\u003e'+euro(m.amax)+'\u003c/b\u003e\u003c/span\u003e';
+        if(m.smax) facts+='\u003cspan\u003eSpesa ammessa fino a \u003cb\u003e'+euro(m.smax)+'\u003c/b\u003e\u003c/span\u003e';
+        facts+='\u003cspan\u003eScadenza: \u003cb\u003e'+(m.ch?dataIt(m.ch):"a sportello")+'\u003c/b\u003e\u003c/span\u003e';
+        var why=r.motivi.slice(0,3).map(function(x){return '\u003cli\u003e'+esc(x)+'\u003c/li\u003e';}).join("");
+        var linkU=m.l?'\u003ca class="link" href="'+esc(m.l)+'" target="_blank" rel="noreferrer"\u003eScheda ufficiale \u2197\u003c/a\u003e':'';
+        var badge=m.cur?'\u003cspan class="natbadge"\u003eNazionale\u003c/span\u003e':'';
+        h+='\u003cdiv class="result'+(m.cur?' nat':'')+'"\u003e\u003cdiv class="score"\u003e'+ring(r.punteggio)+'\u003cdiv class="lbl"\u003epertinenza\u003c/div\u003e\u003c/div\u003e'+
+           '\u003cdiv\u003e\u003ch3 class="mname"\u003e'+esc(m.t)+badge+'\u003c/h3\u003e\u003cdiv class="meta"\u003e'+esc(m.e)+dove+'\u003c/div\u003e'+
+           '\u003cdiv class="tags"\u003e'+formeT+'\u003c/div\u003e\u003cdiv class="facts"\u003e'+facts+'\u003c/div\u003e'+
+           '\u003cdiv class="why"\u003e\u003cul\u003e'+why+'\u003c/ul\u003e\u003c/div\u003e'+
+           '\u003cdiv class="mcta"\u003e\u003cbutton class="btn btn-gold" style="padding:8px 15px;font-size:13px" data-reqmis="'+esc(m.id)+'"\u003eRichiedi valutazione \u2192\u003c/button\u003e'+linkU+'\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e';
+      }
+      if(view.length>S.limite){ h+='\u003cbutton class="btn btn-ghost more" id="more"\u003eMostra altri '+Math.min(20,view.length-S.limite)+' ('+S.limite+'/'+view.length+')\u003c/button\u003e'; }
+    }
+    h+=leadHtml(); h+=footer();
+  }
+
+  app.innerHTML=h; bind();
+}
+
+function leadHtml(){
+  return '<div class="lead" id="lead"><h3 class="display">Trasformiamo l\'orientamento in un piano concreto</h3>'+
+    '<p>Lo studio verifica l\'ammissibilità effettiva, la cumulabilità e costruisce con te la domanda. Sei già registrato: ti basta un clic.</p>'+
+    '<div class="callbox"><div style="flex:1 1 260px"><div class="t">Prenota una call con lo studio</div><div class="s">30 minuti per validare l\'ammissibilità e i prossimi passi.</div></div>'+
+    '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-gold" data-book="1">Scegli un orario →</button>'+
+    '<button class="btn btn-primary" style="background:#fff;color:var(--navy)" id="req-val">Richiedi valutazione</button></div></div>'+
+    '<p style="font-size:11px;margin:16px 0 0">Trattamento dati per finalità di ricontatto secondo l\'informativa privacy. Titolare: Italiano &amp; Partners.</p></div>';
+}
+
+/* --- eventi --- */
+function bind(){
+  document.querySelectorAll("[data-go]").forEach(function(b){ b.onclick=function(){ go(b.getAttribute("data-go")); }; });
+  document.querySelectorAll("[data-book]").forEach(function(b){ b.onclick=openBooking; });
+  document.querySelectorAll("[data-reqmis]").forEach(function(b){ b.onclick=function(){ richiediMisura(b.getAttribute("data-reqmis"), b); }; });
+  document.querySelectorAll("[data-logout]").forEach(function(b){ b.onclick=logout; });
+  document.querySelectorAll("[data-login]").forEach(function(b){ b.onclick=function(){ S.authMode=b.getAttribute("data-login"); go("login"); }; });
+  document.querySelectorAll("[data-tab]").forEach(function(t){ t.onclick=function(){ S.authMode=t.getAttribute("data-tab"); render(); }; });
+  document.querySelectorAll("[data-menu]").forEach(function(b){ b.onclick=function(){ S.menuOpen=!S.menuOpen; render(); }; });
+  document.querySelectorAll("[data-vista]").forEach(function(el){ el.onclick=function(){ S.vista=el.getAttribute("data-vista"); S.limite=20; if(S.step!=="results"){ applyProfilo(S.profilo); go("results"); } else { render(); window.scrollTo(0,0); } }; });
+
+  var rg=document.getElementById("reg-go");
+  if(rg) rg.onclick=inviaLink;
+
+  var n1=document.getElementById("next1");
+  if(n1) n1.onclick=function(){
+    S.settore=document.getElementById("f-settore").value;
+    S.dimensione=document.getElementById("f-dim").value;
+    S.regione=document.getElementById("f-reg").value;
+    if(!S.dimensione||!S.regione){ alert("Seleziona dimensione e regione per continuare."); return; }
+    go("s2");
+  };
+  var chips=document.getElementById("chips-forme");
+  if(chips) chips.querySelectorAll("[data-forme]").forEach(function(c){
+    c.onclick=function(){ var k=c.getAttribute("data-forme"),i=S.forme.indexOf(k);
+      if(i>=0){ S.forme.splice(i,1); c.classList.remove("sel"); } else { S.forme.push(k); c.classList.add("sel"); } };
+  });
+  var imp=document.getElementById("f-imp");
+  if(imp) imp.oninput=function(){ S.importo=+imp.value; document.getElementById("imp-lbl").textContent=euro(S.importo); };
+  var kw=document.getElementById("f-kw");
+  if(kw) kw.oninput=function(){ S.kw=kw.value; };
+  var n2=document.getElementById("next2");
+  if(n2) n2.onclick=function(){ S.limite=20; S.vista="tutti"; S.profilo={settore:S.settore,dimensione:S.dimensione,regione:S.regione,forme:S.forme.slice(),importo:S.importo,kw:S.kw}; saveProfilo(); go("results"); };
+  var more=document.getElementById("more");
+  if(more) more.onclick=function(){ S.limite+=20; render(); window.scrollBy(0,200); };
+  var rv=document.getElementById("req-val");
+  if(rv) rv.onclick=richiediValutazione;
+}
+
+function bookCall(bandoTitolo){
+  var url=BOOKING_URL;
+  if(bandoTitolo){ url += (url.indexOf("?")>=0?"&":"?") + "utm_content=" + encodeURIComponent((""+bandoTitolo).slice(0,80)); }
+  var prefill={};
+  if(S.reg){ if(S.reg.referente) prefill.name=S.reg.referente; if(S.reg.email) prefill.email=S.reg.email; }
+  try{ if(window.Calendly && BOOKING_URL){ Calendly.initPopupWidget({url:url, prefill:prefill}); return; } }catch(e){}
+  var w=window.open(url,"_blank");
+  if(!w){ alert("Apri il calendario di prenotazione: "+url); }
+}
+function openBooking(){ bookCall(null); }
+function richiediMisura(id, btn){
+  var m=null; for(var i=0;i<MISURE.length;i++){ if(MISURE[i].id===id){ m=MISURE[i]; break; } }
+  var profilo=[S.dimensione?DIM[S.dimensione]:"",S.regione,S.settore].filter(Boolean).join(" \u00b7 ");
+  var body=new URLSearchParams();
+  body.append("form-name","contatto-incentivi");
+  body.append("impresa",S.reg.impresa||"");
+  body.append("email",S.reg.email||"");
+  body.append("profilo",(m?("Bando: "+m.t+" \u2014 "):"")+profilo);
+  fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:body.toString()}).catch(function(){});
+  saveRichiesta(m?m.id:id, m?m.t:"Richiesta valutazione");
+  bookCall(m?m.t:"");
+}
+function go(step){
+  S.menuOpen=false;
+  if((step==="s1"||step==="s2"||step==="results"||step==="dashboard") && !S.registered){ S.authMode="accedi"; step="login"; }
+  S.step=step; render(); window.scrollTo(0,0);
+}
+function val(id){ var e=document.getElementById(id); return e?e.value.trim():""; }
+
+function accessCTA(cls){
+  return S.registered
+    ? '\u003cbutton class="'+cls+'" data-go="dashboard"\u003eVai alla dashboard \u2192\u003c/button\u003e'
+    : '\u003cbutton class="'+cls+'" data-login="registrati"\u003eRegistrati e accedi \u2192\u003c/button\u003e';
+}
+function accessButtons(){
+  return S.registered
+    ? '\u003cbutton class="btn btn-primary" data-go="dashboard"\u003eVai alla dashboard \u2192\u003c/button\u003e \u003cbutton class="btn btn-ghost" data-go="s1"\u003eApri il diagnostico\u003c/button\u003e'
+    : '\u003cbutton class="btn btn-primary" data-login="registrati"\u003eRegistrati \u2192\u003c/button\u003e \u003cbutton class="btn btn-ghost" data-login="accedi"\u003eHo gi\u00e0 un account, accedi\u003c/button\u003e';
+}
+function computeKPIs(P){
+  var res=risultati(P), today=new Date(), s30=0,sp=0,mx=0;
+  res.forEach(function(r){var m=r.m;
+    if(!m.ch){ sp++; } else { var d=(new Date(m.ch)-today)/86400000; if(d>=0&&d<=30) s30++; }
+    if(m.amax&&m.amax>mx) mx=m.amax;
+  });
+  return {pertinenti:res.length, scad30:s30, sportello:sp, maxAmax:mx, res:res};
+}
+function euroShort(n){ if(n>=1000000){ var v=(n/1000000); return '\u20ac '+(v%1?v.toFixed(1).replace(".",","):v.toFixed(0))+' mln'; } if(n>=1000){ return '\u20ac '+Math.round(n/1000)+' mila'; } return euro(n); }
+function giorni(ch){ var d=Math.ceil((new Date(ch)-new Date())/86400000); if(d<0) return 'scaduto'; if(d===0) return 'scade oggi'; if(d===1) return 'scade domani'; return 'tra '+d+' giorni'; }
+function kpi(v,l,s,cls,vista){ var ck=vista?' clickable':''; var at=vista?' data-vista="'+vista+'"':''; var go=vista?'\u003cdiv class="kgo"\u003eVedi i bandi \u2192\u003c/div\u003e':''; return '\u003cdiv class="kpi'+ck+' '+(cls||"")+'"'+at+'\u003e\u003cdiv class="kv"\u003e'+v+'\u003c/div\u003e\u003cdiv class="kl"\u003e'+l+'\u003c/div\u003e\u003cdiv class="ks"\u003e'+s+'\u003c/div\u003e'+go+'\u003c/div\u003e'; }
+function vpill(v,l){ return '\u003cspan class="vpill'+(S.vista===v?' on':'')+'" data-vista="'+v+'"\u003e'+l+'\u003c/span\u003e'; }
+function statoBadge(st){ st=st||'Inviata'; var c=st==='Conclusa'?'done':(st==='In valutazione'?'work':'new'); return '\u003cspan class="stato '+c+'"\u003e'+esc(st)+'\u003c/span\u003e'; }
+function pcell(l,v){ return '\u003cdiv class="pcell"\u003e\u003cdiv class="pl"\u003e'+esc(l)+'\u003c/div\u003e\u003cdiv class="pv"\u003e'+esc(v||"\u2014")+'\u003c/div\u003e\u003c/div\u003e'; }
+function lsKey(){ return "diag_profilo_"+(S.user&&S.user.id?S.user.id:(S.reg&&S.reg.email?S.reg.email:"anon")); }
+function saveProfilo(){
+  if(!S.profilo) return;
+  try{ localStorage.setItem(lsKey(), JSON.stringify(S.profilo)); }catch(e){}
+  if(sb&&S.user){ try{ sb.from("profili").update({ profilo:S.profilo }).eq("id",S.user.id).then(function(){},function(){}); }catch(e){} }
+}
+function loadLocalProfilo(){
+  try{ var raw=localStorage.getItem(lsKey()); if(raw){ var p=JSON.parse(raw); if(p){ S.profilo=p; applyProfilo(p); return true; } } }catch(e){}
+  return false;
+}
+function applyProfilo(P){ if(!P) return; S.settore=P.settore||""; S.dimensione=P.dimensione||""; S.regione=P.regione||""; S.forme=(P.forme||[]).slice(); S.importo=P.importo||150000; S.kw=P.kw||""; }
+function saveRichiesta(bid,bt){
+  var now=new Date().toISOString();
+  S.richieste=[{bando_titolo:bt,stato:"Inviata",creato_il:now}].concat(S.richieste||[]);
+  if(!sb||!S.user) return;
+  try{ sb.from("richieste").insert({ user_id:S.user.id, bando_id:bid||null, bando_titolo:bt, stato:"Inviata", profilo:(S.profilo||null) }).then(function(){},function(){}); }catch(e){}
+}
+function loadUserData(){
+  if(!sb||!S.user) return;
+  try{
+    sb.from("profili").select("profilo").eq("id",S.user.id).single().then(function(r){ if(r&&r.data&&r.data.profilo){ S.profilo=r.data.profilo; if(S.step!=="s1"&&S.step!=="s2") applyProfilo(S.profilo); if(S.step==="dashboard") render(); } },function(){});
+    sb.from("richieste").select("bando_id,bando_titolo,stato,creato_il").eq("user_id",S.user.id).order("creato_il",{ascending:false}).then(function(r){ if(r&&r.data){ S.richieste=r.data; if(S.step==="dashboard") render(); } },function(){});
+  }catch(e){}
+}
+var sb=null;
+function initAuth(){
+  try{ if(window.supabase){ sb=window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); } }catch(e){ sb=null; }
+  if(!sb){ render(); return; }
+  sb.auth.getSession().then(function(res){
+    var session=res && res.data ? res.data.session : null;
+    if(session){ onAuthed(session, false); } else { render(); }
+  });
+  sb.auth.onAuthStateChange(function(_e, session){ if(session && !S.registered){ onAuthed(session, true); } });
+}
+function onAuthed(session, justLoggedIn){
+  S.user=session.user; S.registered=true; S.consenso=true;
+  var md=session.user.user_metadata||{};
+  S.reg={ impresa:md.impresa||S.reg.impresa||"", referente:md.referente||S.reg.referente||"", email:session.user.email||"", telefono:md.telefono||S.reg.telefono||"" };
+  loadLocalProfilo();
+  upsertProfilo();
+  loadUserData();
+  if(justLoggedIn || S.step==="login" || S.step==="checkmail" || S.step==="home"){ S.step="dashboard"; }
+  render();
+}
+function upsertProfilo(){
+  if(!sb||!S.user) return;
+  try{ sb.from("profili").upsert({ id:S.user.id, email:S.reg.email, impresa:S.reg.impresa, referente:S.reg.referente, telefono:S.reg.telefono }).then(function(){},function(){}); }catch(e){}
+}
+function inviaLink(){
+  var email=val("r-email");
+  if(!email){ alert("Inserisci la tua email."); return; }
+  if(S.authMode!=="accedi"){
+    var impresa=val("r-impresa"), referente=val("r-ref"), tel=val("r-tel");
+    var cb=document.getElementById("r-consenso"); var consenso=cb?cb.checked:false;
+    if(!impresa||!referente){ alert("Compila impresa e referente."); return; }
+    if(!consenso){ alert("Per registrarti \u00e8 necessario acconsentire al trattamento dei dati."); return; }
+    S.reg={impresa:impresa,referente:referente,email:email,telefono:tel}; S.consenso=true;
+  } else { S.reg.email=email; }
+  if(!sb){ alert("Account non configurato: imposta SUPABASE_URL e SUPABASE_ANON_KEY nel file."); return; }
+  var btn=document.getElementById("reg-go"); if(btn){ btn.disabled=true; btn.textContent="Invio in corso\u2026"; }
+  var opts={ emailRedirectTo: window.location.href.split("#")[0].split("?")[0] };
+  if(S.authMode!=="accedi"){ opts.data={ impresa:S.reg.impresa, referente:S.reg.referente, telefono:S.reg.telefono }; }
+  sb.auth.signInWithOtp({ email:email, options:opts })
+    .then(function(res){
+      if(res && res.error){ alert("Errore nell'invio: "+res.error.message); if(btn){ btn.disabled=false; btn.textContent="Invia link di accesso \u2192"; } return; }
+      S.step="checkmail"; render();
+    });
+}
+function logout(){
+  if(sb){ sb.auth.signOut().then(function(){ S.registered=false; S.user=null; S.reg={}; S.consenso=false; go("home"); }); }
+  else { S.registered=false; S.user=null; S.reg={}; go("home"); }
+}
+
+function richiediValutazione(){
+  var profilo=[S.dimensione?DIM[S.dimensione]:"",S.regione,S.settore,S.kw?("kw:"+S.kw):""].filter(Boolean).join(" \u00b7 ");
+  var body=new URLSearchParams();
+  body.append("form-name","contatto-incentivi");
+  body.append("impresa",S.reg.impresa||""); body.append("email",S.reg.email||""); body.append("profilo",profilo);
+  fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:body.toString()}).catch(function(){});
+  saveRichiesta("", "Valutazione del profilo");
+  bookCall(null);
+}
+function thanks(){
+  var lead=document.getElementById("lead");
+  if(lead) lead.innerHTML='<div class="thanks"><div class="ck">✓</div><h3 class="display">Richiesta ricevuta</h3><p style="margin:0 auto">Lo studio ti ricontatta a breve con una prima valutazione. Grazie.</p></div>';
+}
+
+fetch("misure.json?v="+Date.now()).then(function(r){return r.json();}).then(function(d){ if(Array.isArray(d)&&d.length){ MISURE=d; if(["home","s1","s2","results","dashboard"].indexOf(S.step)>=0) render(); } }).catch(function(){});
+initAuth();
+</script>
+</body>
+</html>
