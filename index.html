@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Diagnostico Incentivi — Italiano &amp; Partners</title>
+<title>Diagnostico Incentivi · Italiano &amp; Partners</title>
 <meta name="description" content="Scopri quali incentivi alle imprese può intercettare la tua azienda, oggi. Strumento gratuito di Italiano & Partners." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -312,7 +312,7 @@ function header(){
   return '\u003cdiv class="top"\u003e\u003ca class="brandlink" data-go="home"\u003e\u003cspan class="mark"\u003e\u003c/span\u003e\u003cspan class="brand"\u003eItaliano&nbsp;&amp;&nbsp;Partners\u003csmall\u003eDiagnostico Incentivi\u003c/small\u003e\u003c/span\u003e\u003c/a\u003e'+burger+nav+'\u003c/div\u003e';
 }
 function footer(){
-  return '<div class="footer"><b>Italiano &amp; Partners</b> — Studio integrato di assistenza legale e consulenza d\'impresa. '+
+  return '<div class="footer"><b>Italiano &amp; Partners</b>, studio integrato di assistenza legale e consulenza d\'impresa. '+
     'Strumento gratuito di orientamento sugli incentivi alle imprese.'+
     '<details><summary>Informativa privacy</summary><div class="info"><b>Titolare del trattamento:</b> Italiano &amp; Partners. '+
     '<b>Dati trattati:</b> impresa, referente, email, telefono e profilo aziendale conferiti in fase di registrazione. '+
@@ -334,12 +334,12 @@ function render(){
        '<p class="sub">È gratuito e richiede pochi minuti. Per accedere è sufficiente registrarsi.</p>'+
        (S.registered ? '<div class="welcome">Bentornato'+(S.reg.impresa?', <b>'+esc(S.reg.impresa)+'</b>':'')+'. I tuoi dati sono salvati nel tuo account.</div>' : '')+
        '<div class="cta">'+accessButtons()+'</div>'+
-       '<div class="stat"><span class="dot"></span><b>'+MISURE.length+' bandi aperti</b>&nbsp;monitorati e aggiornati di continuo</div>'+
+       '<div class="stat"><span class="dot"></span><b>'+(MISURE.length||'…')+' bandi aperti</b>&nbsp;monitorati e aggiornati di continuo</div>'+
        '</div>'+
        '<div class="heroviz">'+
          '<div class="vizcard behind1"></div><div class="vizcard behind2"></div>'+
          '<div class="vizcard"><div class="vizhead"><div class="vizscore">'+ring(94)+'</div>'+
-           '<div><div class="vizt">SIMEST — Internazionalizzazione</div><div class="vizmeta">SIMEST · Nazionale</div></div></div>'+
+           '<div><div class="vizt">SIMEST Internazionalizzazione</div><div class="vizmeta">SIMEST · Nazionale</div></div></div>'+
            '<div class="viztags"><span class="viztag nat">Nazionale</span><span class="viztag">Finanziamento agevolato</span><span class="viztag">Fondo perduto</span></div>'+
            '<div class="vizrow"><span>Agevolazione fino a <b>€ 4.000.000</b></span><span>A sportello</span></div>'+
          '</div>'+
@@ -351,8 +351,8 @@ function render(){
        '</div>';
     h+='<div class="chisiamo"><span class="eyebrow">Chi ha creato questo strumento</span>'+
        '<h3 class="display">Italiano &amp; Partners</h3>'+
-       '<p><span class="firm">Italiano &amp; Partners</span> è uno studio che integra assistenza legale e consulenza d\'impresa, con una specializzazione consolidata nella finanza agevolata e negli strumenti di incentivo pubblico — nazionali, regionali ed europei.</p>'+
-       '<p>Affianchiamo imprese e professionisti nell\'individuare, accedere e gestire le agevolazioni: dalla verifica di ammissibilità alla costruzione e presentazione della domanda. Questo diagnostico è uno strumento gratuito che mettiamo a disposizione per orientarti tra i bandi aperti — il primo passo, non il sostituto, di una valutazione professionale.</p>'+
+       '<p><span class="firm">Italiano &amp; Partners</span> è uno studio che integra assistenza legale e consulenza d\'impresa, con una specializzazione consolidata nella finanza agevolata e negli strumenti di incentivo pubblico, nazionali, regionali ed europei.</p>'+
+       '<p>Affianchiamo imprese e professionisti nell\'individuare, accedere e gestire le agevolazioni: dalla verifica di ammissibilità alla costruzione e presentazione della domanda. Questo diagnostico è uno strumento gratuito che mettiamo a disposizione per orientarti tra i bandi aperti, il primo passo e non il sostituto di una valutazione professionale.</p>'+
        '<div style="margin-top:18px">'+accessCTA("btn btn-gold")+'</div></div>';
     h+=footer();
   }
@@ -431,7 +431,7 @@ function render(){
        '<div class="field"><label>Forma di agevolazione cercata <span class="hint">facoltativo</span></label><div class="chips" id="chips-forme">'+
        Object.keys(FORME).map(function(k){return '<div class="chip'+(S.forme.indexOf(k)>=0?' sel':'')+'" data-forme="'+k+'">'+FORME[k]+'</div>';}).join("")+'</div></div>'+
        '<div class="field"><label>Importo orientativo dell\'investimento</label><input class="in" type="range" min="10000" max="5000000" step="10000" id="f-imp" value="'+S.importo+'"><div class="display" id="imp-lbl" style="font-size:22px;color:var(--navy);margin-top:8px">'+euro(S.importo)+'</div></div>'+
-       '<div class="field" style="margin-bottom:0"><label>Parola chiave del progetto <span class="hint">facoltativo — es. “digitale”, “export”, “turismo”</span></label><input class="in" id="f-kw" value="'+esc(S.kw)+'" placeholder="Cosa vuoi finanziare?"></div>'+
+       '<div class="field" style="margin-bottom:0"><label>Parola chiave del progetto <span class="hint">facoltativo, es. “digitale”, “export”, “turismo”</span></label><input class="in" id="f-kw" value="'+esc(S.kw)+'" placeholder="Cosa vuoi finanziare?"></div>'+
        '<div class="actions"><button class="btn btn-ghost" data-go="s1">← Indietro</button><button class="btn btn-primary" id="next2">Trova i bandi →</button></div></div></div>';
   }
 
@@ -666,7 +666,7 @@ function thanks(){
   if(lead) lead.innerHTML='<div class="thanks"><div class="ck">✓</div><h3 class="display">Richiesta ricevuta</h3><p style="margin:0 auto">Lo studio ti ricontatta a breve con una prima valutazione. Grazie.</p></div>';
 }
 
-fetch("misure.json?v="+Date.now()).then(function(r){return r.json();}).then(function(d){ if(Array.isArray(d)&&d.length){ MISURE=d; if(["s1","s2","results","dashboard"].indexOf(S.step)>=0) render(); } }).catch(function(){});
+fetch("misure.json?v="+Date.now()).then(function(r){return r.json();}).then(function(d){ if(Array.isArray(d)&&d.length){ MISURE=d; if(["home","s1","s2","results","dashboard"].indexOf(S.step)>=0) render(); } }).catch(function(){});
 initAuth();
 </script>
 </body>
