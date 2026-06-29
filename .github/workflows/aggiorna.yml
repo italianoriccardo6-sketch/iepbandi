@@ -3,6 +3,9 @@ name: Aggiorna bandi
 on:
   schedule:
     - cron: "0 4 * * *"
+  push:
+    paths:
+      - "opendata-export.csv"
   workflow_dispatch: {}
 
 permissions:
@@ -24,7 +27,7 @@ jobs:
         run: pip install pandas
 
       - name: Aggiorna il catalogo bandi
-        run: python aggiorna.py
+        run: python aggiorna.py opendata-export.csv
 
       - name: Pubblica le modifiche (se ci sono)
         run: |
