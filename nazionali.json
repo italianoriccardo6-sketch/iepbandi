@@ -1,0 +1,157 @@
+[
+ {
+  "id": "nat-on",
+  "t": "ON — Nuove Imprese a Tasso Zero",
+  "e": "Invitalia",
+  "f": [
+   "finanziamento",
+   "fondo-perduto"
+  ],
+  "d": [
+   "micro",
+   "piccola"
+  ],
+  "at": 1,
+  "naz": 1,
+  "mez": 0,
+  "amb": [],
+  "smax": 3000000,
+  "amax": 1500000,
+  "ch": null,
+  "cur": 1,
+  "ob": "Tasso zero fino al 90% e contributo a fondo perduto per nuove imprese, con priorità a under 36 e donne.",
+  "l": "https://www.invitalia.it/cosa-facciamo/creiamo-nuove-aziende/nuove-imprese-a-tasso-zero"
+ },
+ {
+  "id": "nat-smartstart",
+  "t": "Smart&Start Italia",
+  "e": "Invitalia",
+  "f": [
+   "finanziamento",
+   "fondo-perduto"
+  ],
+  "d": [
+   "micro",
+   "piccola"
+  ],
+  "at": 1,
+  "naz": 1,
+  "mez": 1,
+  "amb": [],
+  "smax": 1500000,
+  "amax": 1500000,
+  "ch": null,
+  "cur": 1,
+  "ob": "Finanziamento agevolato a tasso zero per startup innovative; quota a fondo perduto nel Mezzogiorno.",
+  "l": "https://www.invitalia.it/cosa-facciamo/creiamo-nuove-aziende/smartstart-italia"
+ },
+ {
+  "id": "nat-simest-ecom",
+  "t": "SIMEST — Finanziamento 394 E-commerce",
+  "e": "SIMEST",
+  "f": [
+   "finanziamento",
+   "fondo-perduto"
+  ],
+  "d": [
+   "micro",
+   "piccola",
+   "media"
+  ],
+  "at": 1,
+  "naz": 1,
+  "mez": 1,
+  "amb": [],
+  "smax": 500000,
+  "amax": 500000,
+  "ch": null,
+  "cur": 1,
+  "ob": "Finanziamento agevolato per piattaforme e-commerce sui mercati esteri, con cofinanziamento a fondo perduto.",
+  "l": "https://www.simest.it/finanziamenti-394/e-commerce"
+ },
+ {
+  "id": "nat-simest-intern",
+  "t": "SIMEST — Finanziamento 394 Internazionalizzazione",
+  "e": "SIMEST",
+  "f": [
+   "finanziamento",
+   "fondo-perduto"
+  ],
+  "d": [
+   "micro",
+   "piccola",
+   "media",
+   "grande"
+  ],
+  "at": 1,
+  "naz": 1,
+  "mez": 1,
+  "amb": [],
+  "smax": 4000000,
+  "amax": 4000000,
+  "ch": null,
+  "cur": 1,
+  "ob": "Finanziamento agevolato per transizione digitale ed ecologica connessa all'export e ai mercati esteri.",
+  "l": "https://www.simest.it/finanziamenti-394"
+ },
+ {
+  "id": "nat-trans5",
+  "t": "Transizione 5.0 — Credito d'imposta",
+  "e": "MIMIT / GSE",
+  "f": [
+   "credito-imposta"
+  ],
+  "d": [
+   "micro",
+   "piccola",
+   "media",
+   "grande"
+  ],
+  "at": 1,
+  "naz": 1,
+  "mez": 0,
+  "amb": [],
+  "smax": 50000000,
+  "amax": null,
+  "ch": null,
+  "cur": 1,
+  "ob": "Credito d'imposta crescente in funzione del risparmio energetico conseguito da progetti di innovazione 4.0.",
+  "l": "https://www.mimit.gov.it/it/transizione-5-0"
+ },
+ {
+  "id": "nat-zes",
+  "t": "ZES Unica — Credito d'imposta per il Mezzogiorno",
+  "e": "Agenzia delle Entrate",
+  "f": [
+   "credito-imposta"
+  ],
+  "d": [
+   "micro",
+   "piccola",
+   "media",
+   "grande"
+  ],
+  "at": 1,
+  "naz": 0,
+  "mez": 1,
+  "amb": [
+   "ZES"
+  ],
+  "r": [
+   "Abruzzo",
+   "Molise",
+   "Campania",
+   "Puglia",
+   "Basilicata",
+   "Calabria",
+   "Sicilia",
+   "Sardegna"
+  ],
+  "smax": 100000000,
+  "amax": null,
+  "ch": null,
+  "cur": 1,
+  "ob": "Credito d'imposta per investimenti in beni strumentali e immobili nelle regioni della ZES Unica del Mezzogiorno.",
+  "l": "https://www.agenziaentrate.gov.it/portale/zes-unica"
+ }
+]
