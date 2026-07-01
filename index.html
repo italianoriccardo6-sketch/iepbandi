@@ -279,6 +279,7 @@
   }
 .l-input{flex:1;min-width:0;background:transparent;border:none;outline:none;color:var(--paper);font-family:inherit;font-size:15.5px;line-height:1.4;resize:none;padding:6px 0;max-height:120px;overflow-y:auto;}.l-input::placeholder{color:var(--mist-2);}.l-conf-note{display:flex;gap:10px;align-items:flex-start;background:rgba(91,224,200,.08);border:1px solid rgba(91,224,200,.22);border-radius:12px;padding:14px 16px;margin-bottom:22px;font-size:14px;color:#cfeee7;}.l-conf-note b{color:#eafffb;}
 .l-dashai{margin:2px 0 22px;}.l-dashai-lab{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;}
+.l-chatwrap{width:min(880px,100%);margin:0 auto;animation:lgrow .45s cubic-bezier(.2,.7,.2,1);}@keyframes lgrow{from{opacity:0;transform:translateY(14px) scale(.985);}to{opacity:1;transform:none;}}.l-chattop{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:18px;}.l-chatmsgs{background:rgba(10,23,48,.55);border:1px solid rgba(224,180,80,.16);border-radius:18px;padding:20px;min-height:300px;max-height:56vh;overflow-y:auto;display:flex;flex-direction:column;gap:14px;}.l-msg{display:flex;gap:10px;max-width:90%;}.l-msg.me{margin-left:auto;flex-direction:row-reverse;}.l-ava{flex:0 0 28px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#1a1205;font-size:14px;margin-top:2px;}.l-bub{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:var(--paper);padding:11px 15px;border-radius:14px;font-size:15px;line-height:1.55;}.l-msg.ai .l-bub{border-color:rgba(224,180,80,.18);}.l-msg.me .l-bub{background:rgba(224,180,80,.14);border-color:rgba(224,180,80,.3);color:#fbf6ea;}.l-typing{display:flex;gap:5px;align-items:center;}.l-typing span{width:7px;height:7px;border-radius:50%;background:var(--gold);opacity:.5;animation:lblink 1s infinite;}.l-typing span:nth-child(2){animation-delay:.2s;}.l-typing span:nth-child(3){animation-delay:.4s;}@keyframes lblink{0%,60%,100%{opacity:.3;transform:translateY(0);}30%{opacity:1;transform:translateY(-3px);}}.l-chatbar{display:flex;gap:10px;align-items:flex-end;margin-top:14px;background:rgba(10,23,48,.6);border:1px solid rgba(224,180,80,.22);border-radius:14px;padding:10px 12px;}.l-chatbar .l-go{flex:0 0 auto;}.l-chatfoot{text-align:center;color:var(--mist-2);font-size:13px;margin-top:12px;}.l-chatend{margin-top:16px;background:linear-gradient(135deg,rgba(224,180,80,.12),rgba(91,224,200,.08));border:1px solid rgba(224,180,80,.3);border-radius:16px;padding:22px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;}.l-endtxt{flex:1 1 260px;}.l-endtxt b{color:var(--gold-soft);font-size:17px;}.l-endtxt p{color:var(--mist);font-size:14px;margin:6px 0 0;}.l-endcta{display:flex;gap:10px;flex-wrap:wrap;}
 </style>
 </head>
 <body>
@@ -539,6 +540,25 @@ function render(){
        '</div></div>';
   }
 
+  else if(S.step==="chat"){
+    var _pf=[S.dimensione?DIM[S.dimensione]:"",S.regione,S.settore].filter(Boolean).join(" · ");
+    h+='<div class="l-chatwrap">';
+    h+='<div class="l-chattop"><div><span class="eyebrow">Assistente incentivi</span><h2 class="display">I bandi giusti per te</h2>'+(_pf?'<p class="subprofile">'+esc(_pf)+'</p>':'')+'</div><button class="btn btn-ghost" data-go="home">← Home</button></div>';
+    h+='<div class="l-chatmsgs" id="l-chatmsgs">';
+    for(var _ci=0;_ci<S.chat.length;_ci++){ var _m=S.chat[_ci];
+      h+='<div class="l-msg '+(_m.ruolo==="ai"?"ai":"me")+'">'+(_m.ruolo==="ai"?'<span class="l-ava">✦</span>':'')+'<div class="l-bub">'+chatFmt(_m.testo)+'</div></div>';
+    }
+    if(S.chatLoading){ h+='<div class="l-msg ai"><span class="l-ava">✦</span><div class="l-bub l-typing"><span></span><span></span><span></span></div></div>'; }
+    h+='</div>';
+    if(S.chatEnded){
+      h+='<div class="l-chatend"><div class="l-endtxt"><b>Vuoi trasformare questi bandi in una domanda vera?</b><p>Trenta minuti con lo studio per validare l\'ammissibilità e i prossimi passi, senza impegno.</p></div><div class="l-endcta"><button class="btn btn-primary" id="chat-book">Prenota una call →</button><button class="btn btn-ghost" data-go="results">Vedi tutte le schede</button></div></div>';
+    } else {
+      h+='<div class="l-chatbar"><textarea id="l-chatin" class="l-input" rows="1" placeholder="Chiedimi di un bando, o raccontami di più sul progetto…"></textarea><button class="btn btn-primary l-go" id="l-chatsend">Invia</button></div>';
+      h+='<div class="l-chatfoot">Oppure <span class="lnk" id="chat-book">prenota subito una call</span> con lo studio · <span class="lnk" data-go="results">vedi le schede complete</span></div>';
+    }
+    h+='</div>';
+  }
+
   else if(S.step==="results"){
     var res=risultati(S);
     var _t=new Date();
@@ -579,7 +599,7 @@ function render(){
     h+=leadHtml(); h+=footer();
   }
 
-  app.innerHTML=h; bind(); if(S.step==="home") initHome(); if(S.step==="dashboard") initDash();
+  app.innerHTML=h; bind(); if(S.step==="home") initHome(); if(S.step==="dashboard") initDash(); if(S.step==="chat") initChat();
 }
 
 function leadHtml(){
@@ -625,7 +645,10 @@ function bind(){
   var n2=document.getElementById("next2");
   if(n2) n2.onclick=function(){ S.limite=20; S.vista="tutti"; S.profilo={settore:S.settore,dimensione:S.dimensione,regione:S.regione,forme:S.forme.slice(),importo:S.importo,kw:S.kw}; saveProfilo(); go("results"); };
   var cg=document.getElementById("conf-go");
-  if(cg) cg.onclick=function(){ var st=document.getElementById("f-settore"),dm=document.getElementById("f-dim"),rg=document.getElementById("f-reg"); if(st)S.settore=st.value; if(dm)S.dimensione=dm.value; if(rg)S.regione=rg.value; if(!S.dimensione||!S.regione){ alert("Indica almeno dimensione e regione per vedere i bandi."); return; } S.limite=20; S.vista="tutti"; S.profilo={settore:S.settore,dimensione:S.dimensione,regione:S.regione,forme:S.forme.slice(),importo:S.importo,kw:S.kw}; saveProfilo(); go("results"); };
+  if(cg) cg.onclick=function(){ var st=document.getElementById("f-settore"),dm=document.getElementById("f-dim"),rg=document.getElementById("f-reg"); if(st)S.settore=st.value; if(dm)S.dimensione=dm.value; if(rg)S.regione=rg.value; if(!S.dimensione||!S.regione){ alert("Indica almeno dimensione e regione per vedere i bandi."); return; } S.limite=20; S.vista="tutti"; S.profilo={settore:S.settore,dimensione:S.dimensione,regione:S.regione,forme:S.forme.slice(),importo:S.importo,kw:S.kw}; saveProfilo(); apriChat(); };
+  var _cs=document.getElementById("l-chatsend"); if(_cs) _cs.onclick=chatInvia;
+  var _cin=document.getElementById("l-chatin"); if(_cin){ _cin.onkeydown=function(e){ if(e.key==="Enter"&&!e.shiftKey){ e.preventDefault(); chatInvia(); } }; try{_cin.focus();}catch(_e){} }
+  var _cbk=document.getElementById("chat-book"); if(_cbk) _cbk.onclick=function(){ bookCall("Bandi individuati con l'assistente"); };
   var more=document.getElementById("more");
   if(more) more.onclick=function(){ S.limite+=20; render(); window.scrollBy(0,200); };
   var rv=document.getElementById("req-val");
@@ -815,6 +838,42 @@ function lDemo(){
     var i=0; (function tt(){ if(!document.body.contains(t)) return; t.textContent=phrase.slice(0,i); i++; if(i<=phrase.length) setTimeout(tt,30); })();
     io.disconnect(); } }); },{threshold:.4});
   io.observe(d);
+}
+var CHAT_CAP=5;
+function chatFmt(t){ return esc(t).replace(/\n/g,"<br>"); }
+function slimBando(m){ return {t:m.t,e:m.e,f:(m.f||[]).map(function(f){return FORME[f]||f;}),amax:m.amax||null,smax:m.smax||null,ch:m.ch?dataIt(m.ch):"a sportello",ob:m.ob||""}; }
+function chatScroll(){ var b=document.getElementById("l-chatmsgs"); if(b) b.scrollTop=b.scrollHeight; }
+function apriChat(){
+  var rs=risultati(S); S.chatBandi=rs.slice(0,6).map(function(r){return slimBando(r.m);});
+  S.chat=[]; S.chatCount=0; S.chatStarted=false; S.chatLoading=true; S.chatEnded=false;
+  S.step="chat"; render(); window.scrollTo(0,0);
+}
+function dialogaFetch(){
+  var payload={ modo:"dialoga",
+    profilo:{settore:S.settore,dimensione:S.dimensione?DIM[S.dimensione]:"",regione:S.regione,forme:(S.forme||[]).map(function(f){return FORME[f]||f;}),importo:S.importo,kw:S.kw},
+    bandi:S.chatBandi,
+    storico:S.chat.map(function(x){return {ruolo:x.ruolo,testo:x.testo};}) };
+  return fetch("/.netlify/functions/interpreta",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(payload)}).then(function(r){return r.json();});
+}
+function initChat(){
+  if(S.chatStarted) return; S.chatStarted=true;
+  dialogaFetch().then(function(d){
+    S.chatLoading=false;
+    S.chat.push({ruolo:"ai",testo:(d&&d.testo&&!d.error)?d.testo:"Ho individuato alcuni bandi adatti al tuo profilo. Su quale vuoi che ti dia qualche dettaglio?"});
+    render(); chatScroll();
+  }).catch(function(){ S.chatLoading=false; S.chat.push({ruolo:"ai",testo:"C'è stato un intoppo tecnico. Scrivimi pure qui sotto e riprovo."}); render(); chatScroll(); });
+  chatScroll();
+}
+function chatInvia(){
+  if(S.chatLoading||S.chatEnded) return;
+  var inp=document.getElementById("l-chatin"); if(!inp) return; var t=(inp.value||"").trim(); if(!t) return;
+  S.chat.push({ruolo:"utente",testo:t}); S.chatCount++; S.chatLoading=true; render(); chatScroll();
+  dialogaFetch().then(function(d){
+    S.chatLoading=false;
+    S.chat.push({ruolo:"ai",testo:(d&&d.testo&&!d.error)?d.testo:"Scusa, non ho afferrato bene. Puoi ripetere?"});
+    if(S.chatCount>=CHAT_CAP) S.chatEnded=true;
+    render(); chatScroll();
+  }).catch(function(){ S.chatLoading=false; S.chat.push({ruolo:"ai",testo:"Connessione interrotta, riprova tra un istante."}); render(); chatScroll(); });
 }
 function aiCerca(){
   var inp=document.getElementById("l-ai-input"); if(!inp) return;
