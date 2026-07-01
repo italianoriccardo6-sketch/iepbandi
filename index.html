@@ -390,18 +390,18 @@ function render(){
     h+='<section class="l-hero"><div class="l-copy">'+
        '<div class="l-eyebrow"><span class="l-pulse"></span>Orientamento agli incentivi alle imprese</div>'+
        '<h1 class="display l-h1"><span class="l-line">Gli incentivi <span class="l-shine">giusti</span></span><span class="l-line">per la tua impresa.</span></h1>'+
-       '<p class="l-lede">Smetti di cercare tra centinaia di bandi. <b>Descrivi la tua azienda con parole tue</b> e ci pensa l\'intelligenza artificiale a trovare quelli giusti, gia aperti, ordinati per coerenza.</p>'+
+       '<p class="l-lede">Smetti di cercare tra centinaia di bandi. <b>Descrivi la tua azienda con parole tue</b> e ci pensa l\'intelligenza artificiale a trovare quelli giusti, già aperti, ordinati per coerenza.</p>'+
        (reg ? '<div class="l-welcome">Bentornato'+(S.reg.impresa?', <b>'+esc(S.reg.impresa)+'</b>':'')+'. I tuoi dati sono salvati nel tuo account.</div>' : '')+
        '<div class="l-ai"><div class="l-aibar"><span class="l-spark">\u2726 AI</span><span class="l-typed"><span id="l-typed"></span><span class="l-caret"></span></span><button class="btn btn-primary l-go" id="l-magnet" '+mainCTA+'>Trova i bandi \u2192</button></div></div>'+
        '<div class="l-note"><span class="l-dot2">\u25cf</span> Scrivi come parli. L\'AI capisce settore, dimensione e territorio, e seleziona dai bandi reali. Niente moduli.</div>'+
-       '<div class="l-row2"><div class="l-stat"><div class="l-n"><span class="l-live"></span><span id="l-count">'+(MISURE.length||'\u2026')+'</span></div><div class="l-l">bandi aperti, aggiornati di continuo</div></div><div class="l-stat"><div class="l-n">2 min</div><div class="l-l">per la tua diagnosi</div></div>'+(reg?'':'<span class="l-seclink" data-login="accedi">Ho gia un account</span>')+'</div>'+
+       '<div class="l-row2"><div class="l-stat"><div class="l-n"><span class="l-live"></span><span id="l-count">'+(MISURE.length||'\u2026')+'</span></div><div class="l-l">bandi aperti, aggiornati di continuo</div></div><div class="l-stat"><div class="l-n">2 min</div><div class="l-l">per la tua diagnosi</div></div>'+(reg?'':'<span class="l-seclink" data-login="accedi">Ho già un account</span>')+'</div>'+
        '</div>'+
        '<div class="l-stage"><div class="l-cap"><span class="l-capd"></span>Anteprima di un risultato</div>'+
        '<div class="l-card" id="l-tilt"><div class="l-ctop"><span class="l-match">94% in linea</span><span class="l-scad">Scade tra 12 giorni</span></div>'+
        '<div class="l-ch">'+ring(94)+'<div><div class="l-ct">SIMEST Internazionalizzazione</div><div class="l-cmeta">SIMEST \u00b7 Nazionale</div></div></div>'+
        '<div class="l-tags"><span class="l-tag">Nazionale</span><span class="l-tag l-alt">Finanziamento agevolato</span><span class="l-tag l-alt">Fondo perduto</span></div>'+
        '<div class="l-cfoot"><span>Agevolazione fino a <span class="l-val">\u20ac 4.000.000</span></span><span class="l-sport">A sportello</span></div>'+
-       '<div class="l-cai"><span class="l-cico">\u2726</span><span>Trovato perche hai scritto <b>"PMI, internazionalizzazione, export"</b></span></div>'+
+       '<div class="l-cai"><span class="l-cico">\u2726</span><span>Trovato perché hai scritto <b>"PMI, internazionalizzazione, export"</b></span></div>'+
        '</div></div></section>';
     h+='<section class="l-band"><div class="l-blab">Una sola ricerca, <b>tutte le fonti</b></div><div class="l-mqwrap"><div class="l-marq" id="l-marq">'+
        '<span class="l-chip2">Bandi <span class="g">nazionali</span></span>'+
@@ -424,23 +424,23 @@ function render(){
        '<div class="l-res"><div class="l-rs">88% in linea</div><h4>Decontribuzione Sud</h4><p>Mezzogiorno \u00b7 Sgravio sulle assunzioni</p></div>'+
        '<div class="l-res"><div class="l-rs">85% in linea</div><h4>Bando Turismo Campania</h4><p>Regione Campania \u00b7 Riqualificazione</p></div>'+
        '</div></div></section>';
-    h+='<section class="l-why"><div class="l-big">Non e l\'ennesimo <span class="l-shine">motore di ricerca</span>.</div>'+
-       '<p class="l-intro">I software ti consegnano una lista e ti lasciano solo davanti alla pratica. Dietro questo portale c\'e uno studio vero, che struttura il progetto, prepara il dossier, dialoga con la banca e segue l\'istruttoria fino all\'erogazione.</p>'+
+    h+='<section class="l-why"><div class="l-big">Non è l\'ennesimo <span class="l-shine">motore di ricerca</span>.</div>'+
+       '<p class="l-intro">I software ti consegnano una lista e ti lasciano solo davanti alla pratica. Dietro questo portale c\'è uno studio vero, che struttura il progetto, prepara il dossier, dialoga con la banca e segue l\'istruttoria fino all\'erogazione.</p>'+
        '<div class="l-whygrid"><div class="l-wc them"><div class="k">Una piattaforma software</div><h3>Ti dice quali bandi esistono.</h3><ul>'+
        '<li><span class="i">\u2013</span> Una lista di bandi da leggere</li><li><span class="i">\u2013</span> Compili la domanda da solo</li><li><span class="i">\u2013</span> Se ti blocchi, nessuno risponde</li></ul></div>'+
        '<div class="l-wc us"><div class="k">Italiano &amp; Partners</div><h3>Te li fa ottenere.</h3><ul>'+
-       '<li><span class="i">\u2713</span> Strategia costruita sulla tua impresa</li><li><span class="i">\u2713</span> Dossier preparato dallo studio</li><li><span class="i">\u2713</span> Rapporto con la banca e con l\'ente</li><li><span class="i">\u2713</span> Al tuo fianco fino all\'erogazione</li></ul></div></div></section>';
-    h+='<section class="l-faq"><h2>Domande frequenti</h2><p class="l-sub">Le risposte alle domande piu comuni, in chiaro.</p><div class="l-faqlist">'+
-       '<details class="l-fq"><summary>Che cos\'e IEPbandi?<span class="pl2">+</span></summary><div class="l-ans">Uno strumento gratuito che aiuta imprese, professionisti e startup a individuare le misure di finanza agevolata potenzialmente adatte alla propria attivita, in modo rapido e semplice.</div></details>'+
-       '<details class="l-fq"><summary>E davvero gratuito?<span class="pl2">+</span></summary><div class="l-ans">Si. La consultazione e la prima analisi orientativa sono <b>gratuite</b>. Lo studio interviene, ed e retribuito, solo se decidi di farti seguire nella pratica.</div></details>'+
-       '<details class="l-fq"><summary>Devo essere gia cliente di Italiano &amp; Partners?<span class="pl2">+</span></summary><div class="l-ans">No. Puoi usare la piattaforma liberamente, anche senza alcun rapporto professionale in corso con lo studio.</div></details>'+
+       '<li><span class="i">\u2713</span> Strategià costruita sulla tua impresa</li><li><span class="i">\u2713</span> Dossier preparato dallo studio</li><li><span class="i">\u2713</span> Rapporto con la banca e con l\'ente</li><li><span class="i">\u2713</span> Al tuo fianco fino all\'erogazione</li></ul></div></div></section>';
+    h+='<section class="l-faq"><h2>Domande frequenti</h2><p class="l-sub">Le risposte alle domande più comuni, in chiaro.</p><div class="l-faqlist">'+
+       '<details class="l-fq"><summary>Che cos\'è IEPbandi?<span class="pl2">+</span></summary><div class="l-ans">Uno strumento gratuito che aiuta imprese, professionisti e startup a individuare le misure di finanza agevolata potenzialmente adatte alla propria attività, in modo rapido e semplice.</div></details>'+
+       '<details class="l-fq"><summary>È davvero gratuito?<span class="pl2">+</span></summary><div class="l-ans">Sì. La consultazione e la prima analisi orientativa sono <b>gratuite</b>. Lo studio interviene, ed è retribuito, solo se decidi di farti seguire nella pratica.</div></details>'+
+       '<details class="l-fq"><summary>Devo essere già cliente di Italiano &amp; Partners?<span class="pl2">+</span></summary><div class="l-ans">No. Puoi usare la piattaforma liberamente, anche senza alcun rapporto professionale in corso con lo studio.</div></details>'+
        '<details class="l-fq"><summary>Che tipo di misure posso trovare?<span class="pl2">+</span></summary><div class="l-ans">Non solo contributi a fondo perduto: anche <b>finanziamenti agevolati, garanzie pubbliche, crediti d\'imposta, voucher e agevolazioni fiscali</b>, su investimenti, digitalizzazione, transizione energetica, internazionalizzazione, ricerca e sviluppo, nuove imprese e crescita.</div></details>'+
-       '<details class="l-fq"><summary>Il risultato e una consulenza definitiva?<span class="pl2">+</span></summary><div class="l-ans">No, ha valore <b>orientativo</b>. Individua le possibili opportunita; ogni bando richiede poi una verifica tecnica su requisiti, spese ammissibili, scadenze e massimali.</div></details>'+
-       '<details class="l-fq"><summary>Mi garantite l\'ottenimento del contributo?<span class="pl2">+</span></summary><div class="l-ans">No, nessuno puo garantirlo. L\'esito dipende dai requisiti dell\'impresa, dalla qualita del progetto, dalle risorse disponibili e dalle valutazioni dell\'ente. Il nostro lavoro e presentare una domanda solida che <b>aumenti le probabilita</b>.</div></details>'+
-       '<details class="l-fq"><summary>Cosa succede dopo che trovo un bando?<span class="pl2">+</span></summary><div class="l-ans">Puoi prenotare una valutazione con Italiano &amp; Partners, che verifica la fattibilita, struttura il progetto e predispone la documentazione necessaria fino alla presentazione.</div></details>'+
-       '<details class="l-fq"><summary>Perche usarlo invece di cercare da solo?<span class="pl2">+</span></summary><div class="l-ans">Perche il mondo degli incentivi e frammentato e cambia di continuo. IEPbandi fa una prima scrematura rapida e ti fa concentrare sulle opportunita davvero coerenti con il tuo profilo.</div></details>'+
+       '<details class="l-fq"><summary>Il risultato è una consulenza definitiva?<span class="pl2">+</span></summary><div class="l-ans">No, ha valore <b>orientativo</b>. Individua le possibili opportunità; ogni bando richiede poi una verifica tecnica su requisiti, spese ammissibili, scadenze e massimali.</div></details>'+
+       '<details class="l-fq"><summary>Mi garantite l\'ottenimento del contributo?<span class="pl2">+</span></summary><div class="l-ans">No, nessuno può garantirlo. L\'esito dipende dai requisiti dell\'impresa, dalla qualità del progetto, dalle risorse disponibili e dalle valutazioni dell\'ente. Il nostro lavoro è presentare una domanda solida che <b>aumenti le probabilità</b>.</div></details>'+
+       '<details class="l-fq"><summary>Cosa succede dopo che trovo un bando?<span class="pl2">+</span></summary><div class="l-ans">Puoi prenotare una valutazione con Italiano &amp; Partners, che verifica la fattibilità, struttura il progetto e predispone la documentazione necessaria fino alla presentazione.</div></details>'+
+       '<details class="l-fq"><summary>Perché usarlo invece di cercare da solo?<span class="pl2">+</span></summary><div class="l-ans">Perché il mondo degli incentivi è frammentato e cambia di continuo. IEPbandi fa una prima scrematura rapida e ti fa concentrare sulle opportunità davvero coerenti con il tuo profilo.</div></details>'+
        '</div></section>';
-    h+='<section class="l-closewrap"><div class="l-closing"><h2 class="display">Gli incentivi giusti, e qualcuno che te li fa <span class="l-shine">ottenere</span>.</h2><p>Diritto e consulenza al servizio dell\'innovazione</p><div class="l-cta2"><button class="btn btn-primary" '+mainCTA+'>Avvia il diagnostico \u2192</button>'+(reg?'':'<button class="btn btn-ghost" data-login="accedi">Ho gia un account</button>')+'</div></div></section>';
+    h+='<section class="l-closewrap"><div class="l-closing"><h2 class="display">Gli incentivi giusti, e qualcuno che te li fa <span class="l-shine">ottenere</span>.</h2><p>Diritto e consulenza al servizio dell\'innovazione</p><div class="l-cta2"><button class="btn btn-primary" '+mainCTA+'>Avvia il diagnostico \u2192</button>'+(reg?'':'<button class="btn btn-ghost" data-login="accedi">Ho già un account</button>')+'</div></div></section>';
     h+=footer();
   }
 
@@ -468,7 +468,7 @@ function render(){
   }
   else if(S.step==="checkmail"){
     h+='<div class="panel"><div class="card" style="text-align:center"><div class="ck" style="font-size:34px">✉️</div>'+
-       '<h3 class="display" style="font-size:23px;color:var(--navy);margin:6px 0 8px">Controlla la tua email</h3>'+
+       '<h3 class="display" style="font-size:23px;color:var(--paper);margin:6px 0 8px">Controlla la tua email</h3>'+
        '<p class="substep" style="margin:0 auto;max-width:46ch">Abbiamo inviato un link di accesso a <b>'+esc(S.reg.email||"")+'</b>. Aprilo da questo dispositivo per entrare nel diagnostico. Se non lo trovi, controlla nello spam.</p>'+
        '<div style="margin-top:22px"><button class="btn btn-ghost" data-go="login">← Usa un\'altra email</button></div></div></div>';
     h+=footer();
@@ -517,7 +517,7 @@ function render(){
        '<div class="steplabel"><span class="num">PASSO 02</span><b class="display">Il progetto</b></div><p class="substep">&nbsp;</p>'+
        '<div class="field"><label>Forma di agevolazione cercata <span class="hint">facoltativo</span></label><div class="chips" id="chips-forme">'+
        Object.keys(FORME).map(function(k){return '<div class="chip'+(S.forme.indexOf(k)>=0?' sel':'')+'" data-forme="'+k+'">'+FORME[k]+'</div>';}).join("")+'</div></div>'+
-       '<div class="field"><label>Importo orientativo dell\'investimento</label><input class="in" type="range" min="10000" max="5000000" step="10000" id="f-imp" value="'+S.importo+'"><div class="display" id="imp-lbl" style="font-size:22px;color:var(--navy);margin-top:8px">'+euro(S.importo)+'</div></div>'+
+       '<div class="field"><label>Importo orientativo dell\'investimento</label><input class="in" type="range" min="10000" max="5000000" step="10000" id="f-imp" value="'+S.importo+'"><div class="display" id="imp-lbl" style="font-size:22px;color:var(--gold-soft);margin-top:8px">'+euro(S.importo)+'</div></div>'+
        '<div class="field" style="margin-bottom:0"><label>Parola chiave del progetto <span class="hint">facoltativo, es. “digitale”, “export”, “turismo”</span></label><input class="in" id="f-kw" value="'+esc(S.kw)+'" placeholder="Cosa vuoi finanziare?"></div>'+
        '<div class="actions"><button class="btn btn-ghost" data-go="s1">← Indietro</button><button class="btn btn-primary" id="next2">Trova i bandi →</button></div></div></div>';
   }
