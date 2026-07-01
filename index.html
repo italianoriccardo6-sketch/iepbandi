@@ -867,11 +867,12 @@ function initChat(){
 function chatInvia(){
   if(S.chatLoading||S.chatEnded) return;
   var inp=document.getElementById("l-chatin"); if(!inp) return; var t=(inp.value||"").trim(); if(!t) return;
+  var callIntent=/(call|chiamat|telefonat|appuntament|prenot|fissare|fissiamo|contatt|parlare con|consulenz|incontr)/i.test(t);
   S.chat.push({ruolo:"utente",testo:t}); S.chatCount++; S.chatLoading=true; render(); chatScroll();
   dialogaFetch().then(function(d){
     S.chatLoading=false;
     S.chat.push({ruolo:"ai",testo:(d&&d.testo&&!d.error)?d.testo:"Scusa, non ho afferrato bene. Puoi ripetere?"});
-    if(S.chatCount>=CHAT_CAP) S.chatEnded=true;
+    if(callIntent || S.chatCount>=CHAT_CAP) S.chatEnded=true;
     render(); chatScroll();
   }).catch(function(){ S.chatLoading=false; S.chat.push({ruolo:"ai",testo:"Connessione interrotta, riprova tra un istante."}); render(); chatScroll(); });
 }
