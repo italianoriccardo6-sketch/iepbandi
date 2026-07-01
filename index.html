@@ -277,6 +277,8 @@
     .l-go{flex-basis:100%;order:3;justify-content:center;}
     .l-closing{padding:48px 20px;}
   }
+.l-input{flex:1;min-width:0;background:transparent;border:none;outline:none;color:var(--paper);font-family:inherit;font-size:15.5px;line-height:1.4;resize:none;padding:6px 0;max-height:120px;overflow-y:auto;}.l-input::placeholder{color:var(--mist-2);}.l-conf-note{display:flex;gap:10px;align-items:flex-start;background:rgba(91,224,200,.08);border:1px solid rgba(91,224,200,.22);border-radius:12px;padding:14px 16px;margin-bottom:22px;font-size:14px;color:#cfeee7;}.l-conf-note b{color:#eafffb;}
+.l-dashai{margin:2px 0 22px;}.l-dashai-lab{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;}
 </style>
 </head>
 <body>
@@ -392,7 +394,7 @@ function render(){
        '<h1 class="display l-h1"><span class="l-line">Gli incentivi <span class="l-shine">giusti</span></span><span class="l-line">per la tua impresa.</span></h1>'+
        '<p class="l-lede">Smetti di cercare tra centinaia di bandi. <b>Descrivi la tua azienda con parole tue</b> e ci pensa l\'intelligenza artificiale a trovare quelli giusti, già aperti, ordinati per coerenza.</p>'+
        (reg ? '<div class="l-welcome">Bentornato'+(S.reg.impresa?', <b>'+esc(S.reg.impresa)+'</b>':'')+'. I tuoi dati sono salvati nel tuo account.</div>' : '')+
-       '<div class="l-ai"><div class="l-aibar"><span class="l-spark">\u2726 AI</span><span class="l-typed"><span id="l-typed"></span><span class="l-caret"></span></span><button class="btn btn-primary l-go" id="l-magnet" '+mainCTA+'>Trova i bandi \u2192</button></div></div>'+
+       '<div class="l-ai"><div class="l-aibar"><span class="l-spark">\u2726 AI</span><textarea id="l-ai-input" class="l-input" rows="1" placeholder="Descrivi la tua impresa…"></textarea><button class="btn btn-primary l-go" id="l-magnet">Trova i bandi \u2192</button></div></div>'+
        '<div class="l-note"><span class="l-dot2">\u25cf</span> Scrivi come parli. L\'AI capisce settore, dimensione e territorio, e seleziona dai bandi reali. Niente moduli.</div>'+
        '<div class="l-row2"><div class="l-stat"><div class="l-n"><span class="l-live"></span><span id="l-count">'+(MISURE.length||'\u2026')+'</span></div><div class="l-l">bandi aperti, aggiornati di continuo</div></div><div class="l-stat"><div class="l-n">2 min</div><div class="l-l">per la tua diagnosi</div></div>'+(reg?'':'<span class="l-seclink" data-login="accedi">Ho già un account</span>')+'</div>'+
        '</div>'+
@@ -477,6 +479,7 @@ function render(){
   else if(S.step==="dashboard"){
     var P=S.profilo;
     h+='\u003cdiv class="dashhead"\u003e\u003cdiv\u003e\u003cspan class="eyebrow"\u003eLa tua impresa\u003c/span\u003e\u003ch2 class="display"\u003e'+(S.reg.impresa?esc(S.reg.impresa):"La mia dashboard")+'\u003c/h2\u003e\u003cp class="subprofile"\u003e'+esc(S.reg.referente||"")+(S.reg.email?' \u00b7 '+esc(S.reg.email):'')+'\u003c/p\u003e\u003c/div\u003e\u003cbutton class="topcta" data-go="s1"\u003e'+(P?"Aggiorna la diagnosi":"Avvia il diagnostico")+' \u2192\u003c/button\u003e\u003c/div\u003e';
+    h+='<div class="l-dashai"><div class="l-dashai-lab">Cerca con l\'intelligenza artificiale</div><div class="l-aibar"><span class="l-spark">\u2726 AI</span><textarea id="l-ai-input" class="l-input" rows="1" placeholder="Descrivi cosa vuoi finanziare, scrivi come parli…"></textarea><button class="btn btn-primary l-go" id="l-magnet">Trova i bandi \u2192</button></div></div>';
     if(!P){
       h+='\u003cdiv class="dashprompt"\u003e\u003cdiv class="dpi"\u003e\u25ce\u003c/div\u003e\u003cdiv\u003e\u003cb\u003eCompleta il diagnostico per attivare la dashboard\u003c/b\u003e\u003cp\u003eBastano due passaggi: settore, dimensione e regione. Calcoliamo subito i bandi aperti su misura, con scadenze e valore potenziale.\u003c/p\u003e\u003cbutton class="btn btn-gold" data-go="s1"\u003eAvvia il diagnostico \u2192\u003c/button\u003e\u003c/div\u003e\u003c/div\u003e';
     } else {
@@ -522,6 +525,20 @@ function render(){
        '<div class="actions"><button class="btn btn-ghost" data-go="s1">← Indietro</button><button class="btn btn-primary" id="next2">Trova i bandi →</button></div></div></div>';
   }
 
+  else if(S.step==="conferma"){
+    h+='<div class="panel"><div class="card">'+
+       '<div class="steplabel"><span class="num">AI</span><b class="display">Ecco cosa ho capito</b></div>'+
+       (S.aiRiepilogo?'<div class="l-conf-note"><span>\u2726</span><span>'+esc(S.aiRiepilogo)+'</span></div>':'<p class="substep">Ho precompilato il tuo profilo. Controlla e correggi se serve, poi prosegui.</p>')+
+       '<div class="field"><label>Settore di attività</label><select class="in" id="f-settore"><option value="">Tutti / non specificato</option>'+SETTORI.map(function(s){return '<option'+(S.settore===s?' selected':'')+'>'+s+'</option>';}).join("")+'</select></div>'+
+       '<div class="row"><div class="field"><label>Dimensione</label><select class="in" id="f-dim"><option value="">Seleziona…</option>'+Object.keys(DIM).map(function(k){return '<option value="'+k+'"'+(S.dimensione===k?' selected':'')+'>'+DIM[k]+'</option>';}).join("")+'</select></div>'+
+       '<div class="field"><label>Regione</label><select class="in" id="f-reg"><option value="">Seleziona…</option>'+REGIONI.map(function(r){return '<option'+(S.regione===r?' selected':'')+'>'+r+'</option>';}).join("")+'</select></div></div>'+
+       '<div class="field"><label>Forma di agevolazione <span class="hint">facoltativo</span></label><div class="chips" id="chips-forme">'+Object.keys(FORME).map(function(k){return '<div class="chip'+(S.forme.indexOf(k)>=0?' sel':'')+'" data-forme="'+k+'">'+FORME[k]+'</div>';}).join("")+'</div></div>'+
+       '<div class="field"><label>Importo orientativo dell\'investimento</label><input class="in" type="range" min="10000" max="5000000" step="10000" id="f-imp" value="'+(S.importo||500000)+'"><div class="display" id="imp-lbl" style="font-size:22px;color:var(--gold-soft);margin-top:8px">'+euro(S.importo||500000)+'</div></div>'+
+       '<div class="field" style="margin-bottom:0"><label>Parola chiave del progetto <span class="hint">facoltativo</span></label><input class="in" id="f-kw" value="'+esc(S.kw)+'" placeholder="Cosa vuoi finanziare?"></div>'+
+       '<div class="actions"><button class="btn btn-ghost" data-go="home">← Home</button><button class="btn btn-primary" id="conf-go">Vai ai bandi →</button></div>'+
+       '</div></div>';
+  }
+
   else if(S.step==="results"){
     var res=risultati(S);
     var _t=new Date();
@@ -562,7 +579,7 @@ function render(){
     h+=leadHtml(); h+=footer();
   }
 
-  app.innerHTML=h; bind(); if(S.step==="home") initHome();
+  app.innerHTML=h; bind(); if(S.step==="home") initHome(); if(S.step==="dashboard") initDash();
 }
 
 function leadHtml(){
@@ -607,6 +624,8 @@ function bind(){
   if(kw) kw.oninput=function(){ S.kw=kw.value; };
   var n2=document.getElementById("next2");
   if(n2) n2.onclick=function(){ S.limite=20; S.vista="tutti"; S.profilo={settore:S.settore,dimensione:S.dimensione,regione:S.regione,forme:S.forme.slice(),importo:S.importo,kw:S.kw}; saveProfilo(); go("results"); };
+  var cg=document.getElementById("conf-go");
+  if(cg) cg.onclick=function(){ var st=document.getElementById("f-settore"),dm=document.getElementById("f-dim"),rg=document.getElementById("f-reg"); if(st)S.settore=st.value; if(dm)S.dimensione=dm.value; if(rg)S.regione=rg.value; if(!S.dimensione||!S.regione){ alert("Indica almeno dimensione e regione per vedere i bandi."); return; } S.limite=20; S.vista="tutti"; S.profilo={settore:S.settore,dimensione:S.dimensione,regione:S.regione,forme:S.forme.slice(),importo:S.importo,kw:S.kw}; saveProfilo(); go("results"); };
   var more=document.getElementById("more");
   if(more) more.onclick=function(){ S.limite+=20; render(); window.scrollBy(0,200); };
   var rv=document.getElementById("req-val");
@@ -775,9 +794,10 @@ function initStars(){
   size(); loop();
 }
 function lType(el,phrases){
-  if(!el) return; var pi=0,ci=0,del=false;
+  if(!el) return; var pi=0,ci=0,del=false; var fld=(el.tagName==="TEXTAREA"||el.tagName==="INPUT");
   (function tick(){ if(!document.body.contains(el)) return;
-    var s=phrases[pi]; el.textContent=s.slice(0,ci);
+    if(fld && el.value){ setTimeout(tick,700); return; }
+    var s=phrases[pi], t=s.slice(0,ci); if(fld){ el.placeholder=t; } else { el.textContent=t; }
     if(!del){ ci++; if(ci>s.length){ del=true; setTimeout(tick,1500); return; } }
     else{ ci--; if(ci<0){ del=false; pi=(pi+1)%phrases.length; ci=0; } }
     setTimeout(tick, del?28:52); })();
@@ -796,9 +816,36 @@ function lDemo(){
     io.disconnect(); } }); },{threshold:.4});
   io.observe(d);
 }
+function aiCerca(){
+  var inp=document.getElementById("l-ai-input"); if(!inp) return;
+  var testo=(inp.value||"").trim();
+  if(!testo){ inp.focus(); return; }
+  var btn=document.getElementById("l-magnet");
+  if(btn){ btn.disabled=true; btn.dataset.lbl=btn.textContent; btn.textContent="Sto leggendo…"; }
+  fetch("/.netlify/functions/interpreta",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({testo:testo})})
+    .then(function(r){ return r.json(); })
+    .then(function(c){
+      if(c && !c.error){
+        S.settore=c.settore||""; S.dimensione=c.dimensione||""; S.regione=c.regione||"";
+        S.forme=Array.isArray(c.forme)?c.forme:[]; S.importo=c.importo||S.importo||500000; S.kw=c.kw||"";
+        S.aiRiepilogo=c.riepilogo||""; S.step="conferma"; render(); window.scrollTo(0,0);
+      } else {
+        if(btn){ btn.disabled=false; btn.textContent=btn.dataset.lbl||"Trova i bandi \u2192"; }
+        alert("Non sono riuscito a leggere la frase. Riprova tra un attimo.");
+      }
+    })
+    .catch(function(){
+      if(btn){ btn.disabled=false; btn.textContent=btn.dataset.lbl||"Trova i bandi \u2192"; }
+      alert("Connessione non riuscita. Controlla la rete e riprova.");
+    });
+}
+function initDash(){
+  var b=document.getElementById("l-magnet"); if(b) b.onclick=aiCerca;
+  lType(document.getElementById("l-ai-input"),["Sono una PMI del turismo in Campania, voglio ristrutturare…","Cerco fondo perduto per digitalizzare l'azienda…","Voglio acquistare macchinari nuovi per la produzione…","Assumo personale e apro un nuovo punto vendita…"]);
+}
 function initHome(){
   var m=document.getElementById("l-marq"); if(m && !m.getAttribute("data-dup")){ m.innerHTML+=m.innerHTML; m.setAttribute("data-dup","1"); }
-  lType(document.getElementById("l-typed"),["Sono una PMI campana del turismo, voglio ristrutturare un immobile...","Startup innovativa a Milano, cerco fondo perduto per ricerca e sviluppo...","Azienda agricola in Puglia, voglio acquistare nuovi macchinari...","Impresa femminile, assumo due persone e apro un e-commerce..."]);
+  lType(document.getElementById("l-ai-input"),["Sono una PMI campana del turismo, voglio ristrutturare un immobile...","Startup innovativa a Milano, cerco fondo perduto per ricerca e sviluppo...","Azienda agricola in Puglia, voglio acquistare nuovi macchinari...","Impresa femminile, assumo due persone e apro un e-commerce..."]);
   lCount(document.getElementById("l-count"), MISURE.length||0);
   lDemo();
   var card=document.getElementById("l-tilt");
@@ -806,7 +853,7 @@ function initHome(){
     st.onmousemove=function(e){ var r=st.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5; card.style.transform="rotateY("+(px*7)+"deg) rotateX("+(-py*7)+"deg)"; };
     st.onmouseleave=function(){ card.style.transform="rotateY(0) rotateX(0)"; }; }
   var b=document.getElementById("l-magnet");
-  if(b){ b.onmousemove=function(e){ var r=b.getBoundingClientRect(); b.style.transform="translate("+((e.clientX-r.left-r.width/2)*.2)+"px,"+((e.clientY-r.top-r.height/2)*.3)+"px)"; };
+  if(b){ b.onclick=aiCerca; b.onmousemove=function(e){ var r=b.getBoundingClientRect(); b.style.transform="translate("+((e.clientX-r.left-r.width/2)*.2)+"px,"+((e.clientY-r.top-r.height/2)*.3)+"px)"; };
     b.onmouseleave=function(){ b.style.transform="translate(0,0)"; }; }
 }
 
