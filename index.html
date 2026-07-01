@@ -31,7 +31,7 @@
   .panel{max-width:660px;margin:0 auto;}
   @media(max-width:560px){.wrap{padding:0 18px 56px;}}
   .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-  .top{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;padding:15px 0;margin-bottom:8px;border-bottom:1px solid var(--line);backdrop-filter:blur(12px);background:rgba(6,16,31,.72);}
+  .top{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;padding:15px clamp(20px,3.5vw,48px);margin:0 calc(50% - 50vw) 8px;border-bottom:1px solid var(--line);backdrop-filter:blur(12px);background:rgba(6,16,31,.72);}
   .brandlink{display:flex;align-items:center;gap:12px;cursor:pointer;text-decoration:none;}
   .mark{width:36px;height:36px;border-radius:50%;position:relative;flex:0 0 auto;background:radial-gradient(circle at 35% 30%,#16294a,#0A1730);box-shadow:0 0 0 1px rgba(224,180,80,.3),0 0 20px rgba(224,180,80,.22);}
   .mark::after{content:"";position:absolute;inset:11px;border-radius:50%;border:1.5px solid var(--gold);box-shadow:0 0 10px var(--gold);}
